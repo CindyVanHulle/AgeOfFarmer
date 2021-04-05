@@ -9,3 +9,8 @@ WoodCase >> initialize [
 
 	points := 2
 ]
+
+{ #category : #initialization }
+WoodCase >> printOn: aStream [
+	aStream nextPutAll: 'W'.
+]

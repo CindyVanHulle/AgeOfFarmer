@@ -7,7 +7,7 @@ Class {
 	#category : #AgeOfFarmer
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acccessing }
 Ressource >> getNourriture [
 
 	^ unityNourriture

@@ -1,5 +1,29 @@
 Class {
 	#name : #Army,
 	#superclass : #TypeCharacter,
+	#instVars : [
+		'taille',
+		'stockOr'
+	],
 	#category : #AgeOfFarmer
 }
+
+{ #category : #acccessing }
+Army >> incrementOr [
+	stockOr := stockOr + 1
+]
+
+{ #category : #acccessing }
+Army >> nbNourritureConsomme [
+	^ taille
+]
+
+{ #category : #acccessing }
+Army >> stockOr [
+	^ stockOr
+]
+
+{ #category : #acccessing }
+Army >> taille [
+	^ taille
+]

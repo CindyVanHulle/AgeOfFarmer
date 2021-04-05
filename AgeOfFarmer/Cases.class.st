@@ -7,8 +7,13 @@ Class {
 	#category : #AgeOfFarmer
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #acccessing }
 Cases >> getPoints [
 
 	^ points
+]
+
+{ #category : #acccessing }
+Cases >> printOn: aStream [
+	aStream nextPutAll: 'O'.
 ]

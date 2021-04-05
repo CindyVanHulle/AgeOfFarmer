@@ -9,3 +9,8 @@ DesertCase >> initialize [
 
 	points := 4
 ]
+
+{ #category : #initialization }
+DesertCase >> printOn: aStream [
+	aStream nextPutAll: 'D'.
+]

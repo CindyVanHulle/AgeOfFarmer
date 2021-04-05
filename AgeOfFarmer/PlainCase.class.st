@@ -9,3 +9,8 @@ PlainCase >> initialize [
 
 	points := 1
 ]
+
+{ #category : #initialization }
+PlainCase >> printOn: aStream [
+	aStream nextPutAll: 'P'.
+]
