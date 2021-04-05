@@ -5,6 +5,7 @@ Class {
 }
 
 { #category : #initialization }
-Sand >> initialize [ 
+Sand >> initialize [
+
 	unityNourriture := 0
 ]

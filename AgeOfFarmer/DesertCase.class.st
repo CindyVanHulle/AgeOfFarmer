@@ -3,3 +3,8 @@ Class {
 	#superclass : #Cases,
 	#category : #AgeOfFarmer
 }
+
+{ #category : #initialization }
+DesertCase >> initialize [ 
+	points := 4
+]

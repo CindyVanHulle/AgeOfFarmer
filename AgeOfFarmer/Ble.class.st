@@ -5,6 +5,7 @@ Class {
 }
 
 { #category : #initialization }
-Ble >> initialize [ 
+Ble >> initialize [
+
 	unityNourriture := 5
 ]

@@ -9,5 +9,6 @@ Class {
 
 { #category : #accesing }
 Ressource >> getNourriture [
+
 	^ unityNourriture
 ]

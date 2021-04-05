@@ -5,6 +5,7 @@ Class {
 }
 
 { #category : #initialization }
-Wood >> initialize [ 
+Wood >> initialize [
+
 	unityNourriture := 1
 ]
