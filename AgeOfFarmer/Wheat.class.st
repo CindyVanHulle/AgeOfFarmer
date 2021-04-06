@@ -1,11 +1,11 @@
 Class {
-	#name : #Wood,
+	#name : #Wheat,
 	#superclass : #Ressource,
 	#category : #AgeOfFarmer
 }
 
 { #category : #initialization }
-Wood >> initialize [
+Wheat >> initialize [
 
-	unityNourriture := 1
+	unityNourriture := 5
 ]

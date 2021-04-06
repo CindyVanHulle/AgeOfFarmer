@@ -2,7 +2,7 @@ Class {
 	#name : #Ressource,
 	#superclass : #Object,
 	#instVars : [
-		'unityNourriture'
+		'unitsFood'
 	],
 	#category : #AgeOfFarmer
 }
@@ -10,10 +10,10 @@ Class {
 { #category : #acccessing }
 Ressource >> getNourriture [
 
-	^ unityNourriture
+	^ unitsFood
 ]
 
 { #category : #acccessing }
 Ressource >> initialize [ 
-	unityNourriture := 0
+	unitsFood := 0
 ]
