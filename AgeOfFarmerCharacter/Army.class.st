@@ -8,6 +8,11 @@ Class {
 	#category : #AgeOfFarmerCharacter
 }
 
+{ #category : #creating }
+Army class >> withArmySize: anInteger [ 
+	^ self new setSize: anInteger
+]
+
 { #category : #acccessing }
 Army >> incrementOr [
 	stockOr := stockOr + 1
@@ -22,6 +27,11 @@ Army >> initialize [
 { #category : #acccessing }
 Army >> nbNourritureConsomme [
 	^ taille
+]
+
+{ #category : #acccessing }
+Army >> setSize: anInteger [ 
+	taille := anInteger
 ]
 
 { #category : #acccessing }
