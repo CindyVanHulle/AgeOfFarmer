@@ -7,10 +7,10 @@ Class {
 { #category : #tests }
 MontainCasesTest >> testGetArmySize [
 	| m army|
-	army := Army new.
+	army := Army withArmySize: 3.
 	m := MontainCase new.
 	m setCharacter: army .
-	self assert: m getArmySize  equals: 7.
+	self assert: m getArmySize  equals: 3.
 ]
 
 { #category : #tests }

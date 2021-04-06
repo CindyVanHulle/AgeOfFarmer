@@ -7,10 +7,10 @@ Class {
 { #category : #tests }
 DesertCasesTest >> testGetArmySize [
 	| d army|
-	army := Army new.
+	army := Army withArmySize: 3.
 	d := DesertCase new.
 	d setCharacter: army .
-	self assert: (d getArmySize  ) equals: 5.
+	self assert: (d getArmySize  ) equals: 3.
 ]
 
 { #category : #tests }
