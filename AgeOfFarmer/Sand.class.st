@@ -6,6 +6,5 @@ Class {
 
 { #category : #initialization }
 Sand >> initialize [
-
-	unityNourriture := 0
+	super initialize.
 ]

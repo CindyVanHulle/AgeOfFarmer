@@ -6,7 +6,7 @@ Class {
 
 { #category : #initialization }
 WoodCase >> initialize [
-
+	super initialize .
 	points := 2
 ]
 

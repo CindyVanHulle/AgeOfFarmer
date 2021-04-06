@@ -6,6 +6,5 @@ Class {
 
 { #category : #initialization }
 Rock >> initialize [
-
-	unityNourriture := 0
+	super initialize 
 ]

@@ -6,7 +6,7 @@ Class {
 
 { #category : #initialization }
 PlainCase >> initialize [
-
+	super initialize .
 	points := 1
 ]
 

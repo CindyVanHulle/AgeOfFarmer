@@ -12,3 +12,8 @@ Ressource >> getNourriture [
 
 	^ unityNourriture
 ]
+
+{ #category : #acccessing }
+Ressource >> initialize [ 
+	unityNourriture := 0
+]

@@ -5,8 +5,19 @@ Class {
 }
 
 { #category : #initialization }
-MontainCase >> initialize [
+MontainCase >> getTailleArmy [
+	^ character taille + 2
+]
 
+{ #category : #initialization }
+MontainCase >> getTailleArmyMax [
+	tailleArmyMax := 3.
+	^ tailleArmyMax
+]
+
+{ #category : #initialization }
+MontainCase >> initialize [
+	super initialize .
 	points := 4
 ]
 

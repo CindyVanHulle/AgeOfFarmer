@@ -14,6 +14,12 @@ Army >> incrementOr [
 ]
 
 { #category : #acccessing }
+Army >> initialize [ 
+	taille := 5.
+	stockOr := 0.
+]
+
+{ #category : #acccessing }
 Army >> nbNourritureConsomme [
 	^ taille
 ]

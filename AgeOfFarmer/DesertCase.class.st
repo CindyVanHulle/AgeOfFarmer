@@ -5,8 +5,14 @@ Class {
 }
 
 { #category : #initialization }
-DesertCase >> initialize [
+DesertCase >> getTailleArmyMax [
+	tailleArmyMax := 3.
+	^ tailleArmyMax
+]
 
+{ #category : #initialization }
+DesertCase >> initialize [
+	super initialize .
 	points := 4
 ]
 
