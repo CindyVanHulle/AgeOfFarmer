@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'points',
 		'character',
-		'armySizeMax'
+		'armySizeMax',
+		'ressource'
 	],
 	#category : #AgeOfFarmerCase
 }
@@ -30,6 +31,11 @@ Cases >> getPoints [
 	^ points
 ]
 
+{ #category : #access }
+Cases >> getRessource [
+	^ ressource 
+]
+
 { #category : #acccessing }
 Cases >> initialize [ 
 	armySizeMax := 5
@@ -44,4 +50,9 @@ Cases >> printOn: aStream [
 Cases >> setCharacter: aTypeCharacter [
 	character := aTypeCharacter.
 	armySizeMax := 5.
+]
+
+{ #category : #setter }
+Cases >> setRessource: aRessource [
+	ressource := aRessource.
 ]

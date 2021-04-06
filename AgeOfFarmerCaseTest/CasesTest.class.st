@@ -14,6 +14,15 @@ CasesTest >> testGetAndSetCharacter [
 ]
 
 { #category : #tests }
+CasesTest >> testGetAndSetRessource [
+	| case ressource |
+	case := Cases new.
+	ressource := Wood new.
+	case setRessource: ressource.
+	self assert: case getRessource equals: ressource.
+]
+
+{ #category : #tests }
 CasesTest >> testGetArmySize [
 	| d m p w army|
 	army := Army new.
