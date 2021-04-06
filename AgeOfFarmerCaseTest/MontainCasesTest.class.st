@@ -5,24 +5,24 @@ Class {
 }
 
 { #category : #tests }
-MontainCasesTest >> testGetPoints [
-	| m |
-	m := MontainCase new.
-	self assert: m getPoints  equals: 4.
-]
-
-{ #category : #tests }
-MontainCasesTest >> testGetTailleArmy [
+MontainCasesTest >> testGetArmySize [
 	| m army|
 	army := Army new.
 	m := MontainCase new.
 	m setCharacter: army .
-	self assert: m getTailleArmy  equals: 7.
+	self assert: m getArmySize  equals: 7.
 ]
 
 { #category : #tests }
-MontainCasesTest >> testGetTailleArmyMax [
+MontainCasesTest >> testGetArmySizeMax [
 	| m |
 	m := MontainCase new.
-	self assert: m getTailleArmyMax  equals: 3.
+	self assert: m getArmySizeMax  equals: 3.
+]
+
+{ #category : #tests }
+MontainCasesTest >> testGetPoints [
+	| m |
+	m := MontainCase new.
+	self assert: m getPoints  equals: 4.
 ]

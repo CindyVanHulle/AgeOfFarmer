@@ -5,24 +5,24 @@ Class {
 }
 
 { #category : #tests }
-DesertCasesTest >> testGetPoints [
-	| d |
-	d := DesertCase new.
-	self assert: (d getPoints ) equals: 4.
-]
-
-{ #category : #tests }
-DesertCasesTest >> testGetTailleArmy [
+DesertCasesTest >> testGetArmySize [
 	| d army|
 	army := Army new.
 	d := DesertCase new.
 	d setCharacter: army .
-	self assert: (d getTailleArmy  ) equals: 5.
+	self assert: (d getArmySize  ) equals: 5.
 ]
 
 { #category : #tests }
-DesertCasesTest >> testGetTailleArmyMax [
+DesertCasesTest >> testGetArmySizeMax [
 	| d |
 	d := DesertCase new.
-	self assert: (d getTailleArmyMax  ) equals: 3.
+	self assert: (d getArmySizeMax  ) equals: 3.
+]
+
+{ #category : #tests }
+DesertCasesTest >> testGetPoints [
+	| d |
+	d := DesertCase new.
+	self assert: (d getPoints ) equals: 4.
 ]

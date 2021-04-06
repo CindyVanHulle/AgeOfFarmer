@@ -5,9 +5,9 @@ Class {
 }
 
 { #category : #initialization }
-DesertCase >> getTailleArmyMax [
-	tailleArmyMax := 3.
-	^ tailleArmyMax
+DesertCase >> getArmySizeMax [
+	armySizeMax := 3.
+	^ armySizeMax
 ]
 
 { #category : #initialization }

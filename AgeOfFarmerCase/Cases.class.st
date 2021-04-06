@@ -4,10 +4,20 @@ Class {
 	#instVars : [
 		'points',
 		'character',
-		'tailleArmyMax'
+		'armySizeMax'
 	],
 	#category : #AgeOfFarmerCase
 }
+
+{ #category : #acccessing }
+Cases >> getArmySize [
+	^ character taille
+]
+
+{ #category : #acccessing }
+Cases >> getArmySizeMax [
+	^ armySizeMax
+]
 
 { #category : #acccessing }
 Cases >> getCharacter [
@@ -21,18 +31,8 @@ Cases >> getPoints [
 ]
 
 { #category : #acccessing }
-Cases >> getTailleArmy [
-	^ character taille
-]
-
-{ #category : #acccessing }
-Cases >> getTailleArmyMax [
-	^ tailleArmyMax
-]
-
-{ #category : #acccessing }
 Cases >> initialize [ 
-	tailleArmyMax := 5
+	armySizeMax := 5
 ]
 
 { #category : #acccessing }
@@ -43,5 +43,5 @@ Cases >> printOn: aStream [
 { #category : #acccessing }
 Cases >> setCharacter: aTypeCharacter [
 	character := aTypeCharacter.
-	tailleArmyMax := 5.
+	armySizeMax := 5.
 ]

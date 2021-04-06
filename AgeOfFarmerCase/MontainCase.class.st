@@ -5,14 +5,14 @@ Class {
 }
 
 { #category : #initialization }
-MontainCase >> getTailleArmy [
+MontainCase >> getArmySize [
 	^ character taille + 2
 ]
 
 { #category : #initialization }
-MontainCase >> getTailleArmyMax [
-	tailleArmyMax := 3.
-	^ tailleArmyMax
+MontainCase >> getArmySizeMax [
+	armySizeMax := 3.
+	^ armySizeMax
 ]
 
 { #category : #initialization }

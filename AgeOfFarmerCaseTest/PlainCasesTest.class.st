@@ -5,24 +5,24 @@ Class {
 }
 
 { #category : #tests }
-PlainCasesTest >> testGetPoints [
-	| p |
-	p := PlainCase new.
-	self assert: p getPoints equals: 1.
-]
-
-{ #category : #tests }
-PlainCasesTest >> testGetTailleArmy [
+PlainCasesTest >> testGetArmySize [
 	| p army|
 	army := Army new.
 	p := PlainCase new.
 	p setCharacter: army .
-	self assert: p getTailleArmy equals: 5.
+	self assert: p getArmySize equals: 5.
 ]
 
 { #category : #tests }
-PlainCasesTest >> testGetTailleArmyMax [
+PlainCasesTest >> testGetArmySizeMax [
 	| p |
 	p := PlainCase new.
-	self assert: p getTailleArmyMax equals: 5.
+	self assert: p getArmySizeMax equals: 5.
+]
+
+{ #category : #tests }
+PlainCasesTest >> testGetPoints [
+	| p |
+	p := PlainCase new.
+	self assert: p getPoints equals: 1.
 ]
