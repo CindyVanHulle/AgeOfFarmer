@@ -1,5 +1,5 @@
 Class {
 	#name : #Farmer,
 	#superclass : #TypeCharacter,
-	#category : #AgeOfFarmer
+	#category : #AgeOfFarmerCharacter
 }

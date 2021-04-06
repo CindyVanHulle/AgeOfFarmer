@@ -5,7 +5,7 @@ Class {
 		'taille',
 		'stockOr'
 	],
-	#category : #AgeOfFarmer
+	#category : #AgeOfFarmerCharacter
 }
 
 { #category : #acccessing }
