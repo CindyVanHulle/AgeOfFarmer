@@ -26,3 +26,10 @@ PlainCasesTest >> testGetPoints [
 	p := PlainCase new.
 	self assert: p getPoints equals: 1.
 ]
+
+{ #category : #tests }
+PlainCasesTest >> testHarvest [ 
+	| plain |
+	plain := PlainCase new.
+	self assert: plain harvest equals: #Wheat
+]

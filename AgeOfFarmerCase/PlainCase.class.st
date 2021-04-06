@@ -4,6 +4,11 @@ Class {
 	#category : #AgeOfFarmerCase
 }
 
+{ #category : #creation }
+PlainCase >> harvest [
+	^ Wheat new.
+]
+
 { #category : #initialization }
 PlainCase >> initialize [
 	super initialize .

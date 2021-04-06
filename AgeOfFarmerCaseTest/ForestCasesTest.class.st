@@ -26,3 +26,10 @@ ForestCasesTest >> testGetPoints [
 	w := ForestCase new.
 	self assert: w getPoints equals: 2.
 ]
+
+{ #category : #tests }
+ForestCasesTest >> testHarvest [ 
+	| forest |
+	forest := ForestCase new.
+	self assert: forest harvest equals: #Wood
+]

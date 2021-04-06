@@ -28,6 +28,13 @@ MontainCasesTest >> testGetPoints [
 ]
 
 { #category : #tests }
+MontainCasesTest >> testHarvest [ 
+	| montain |
+	montain := MontainCase new.
+	self assert: montain harvest equals: #Stone
+]
+
+{ #category : #tests }
 MontainCasesTest >> testSetArmySuperiorAt3 [
 	| montain army |
 	montain := MontainCase new.

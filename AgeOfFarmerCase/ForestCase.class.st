@@ -4,6 +4,11 @@ Class {
 	#category : #AgeOfFarmerCase
 }
 
+{ #category : #creation }
+ForestCase >> harvest [
+	^ Wood new.
+]
+
 { #category : #initialization }
 ForestCase >> initialize [
 	super initialize .

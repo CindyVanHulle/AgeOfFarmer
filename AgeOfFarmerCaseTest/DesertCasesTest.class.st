@@ -28,6 +28,13 @@ DesertCasesTest >> testGetPoints [
 ]
 
 { #category : #tests }
+DesertCasesTest >> testHarvest [
+	| desert |
+	desert := DesertCase new.
+	self assert: desert harvest equals: #Sand
+]
+
+{ #category : #tests }
 DesertCasesTest >> testSetArmySuperiorAt3 [
 	| desert army |
 	desert := DesertCase new.

@@ -10,6 +10,11 @@ DesertCase >> getArmySizeMax [
 	^ armySizeMax
 ]
 
+{ #category : #creation }
+DesertCase >> harvest [
+	^ Sand new.
+]
+
 { #category : #initialization }
 DesertCase >> initialize [
 	super initialize .

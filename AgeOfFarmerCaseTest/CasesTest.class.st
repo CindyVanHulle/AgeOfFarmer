@@ -23,24 +23,6 @@ CasesTest >> testGetAndSetRessource [
 ]
 
 { #category : #tests }
-CasesTest >> testGetArmySize [
-	| d m p w army|
-	army := Army new.
-	d := DesertCase new.
-	d setCharacter: army .
-	m := MontainCase new.
-	m setCharacter: army .
-	p := PlainCase new.
-	p setCharacter: army .
-	w := ForestCase new.
-	w setCharacter: army .
-	self assert: (d getArmySize  ) equals: 5.
-	self assert: m getArmySize  equals: 7.
-	self assert: p getArmySize equals: 5.
-	self assert: w getArmySize equals: 5.
-]
-
-{ #category : #tests }
 CasesTest >> testGetArmySizeMax [
 	| d m p w|
 	d := DesertCase new.

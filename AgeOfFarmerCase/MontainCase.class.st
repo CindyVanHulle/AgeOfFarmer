@@ -15,6 +15,11 @@ MontainCase >> getArmySizeMax [
 	^ armySizeMax
 ]
 
+{ #category : #creation }
+MontainCase >> harvest [
+	^ Stone new.
+]
+
 { #category : #initialization }
 MontainCase >> initialize [
 	super initialize .
