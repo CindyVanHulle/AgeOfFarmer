@@ -1,10 +1,15 @@
 Class {
-	#name : #Rock,
+	#name : #Stone,
 	#superclass : #Ressource,
 	#category : #AgeOfFarmerRessource
 }
 
+{ #category : #access }
+Stone >> getGold [
+	^gold
+]
+
 { #category : #initialization }
-Rock >> initialize [
-	super initialize 
+Stone >> initialize [
+	gold := 2.
 ]

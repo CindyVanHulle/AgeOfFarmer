@@ -5,8 +5,8 @@ Class {
 }
 
 { #category : #tests }
-SandTest >> testGetFood [ 
+SandTest >> testGetGold [
 	| sand |
 	sand := Sand new.
-	self assert: sand getFood equals: 0.
+	self assert: sand getGold equals: 5.
 ]

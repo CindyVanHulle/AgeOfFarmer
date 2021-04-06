@@ -10,3 +10,10 @@ WheatTest >> testGetFood [
 	wheat := Wheat new.
 	self assert: wheat getFood equals: 5.
 ]
+
+{ #category : #tests }
+WheatTest >> testGetGold [
+	| wheat |
+	wheat := Wheat new.
+	self assert: wheat getGold equals: 2.
+]

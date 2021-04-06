@@ -4,8 +4,13 @@ Class {
 	#category : #AgeOfFarmerRessource
 }
 
+{ #category : #access }
+Wheat >> getGold [
+	^gold
+]
+
 { #category : #initialization }
 Wheat >> initialize [
-
-	unitsFood := 5
+	gold := 2.
+	unitsFood := 5.
 ]

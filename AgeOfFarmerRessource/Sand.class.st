@@ -4,7 +4,12 @@ Class {
 	#category : #AgeOfFarmerRessource
 }
 
+{ #category : #access }
+Sand >> getGold [
+	^gold
+]
+
 { #category : #initialization }
 Sand >> initialize [
-	super initialize.
+	gold := 5.
 ]

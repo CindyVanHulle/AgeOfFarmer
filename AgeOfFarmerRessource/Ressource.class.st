@@ -1,16 +1,13 @@
 Class {
 	#name : #Ressource,
 	#superclass : #Object,
+	#instVars : [
+		'gold'
+	],
 	#category : #AgeOfFarmerRessource
 }
 
 { #category : #acccessing }
-Ressource >> getFood [
-
-	^ unitsFood
-]
-
-{ #category : #acccessing }
 Ressource >> initialize [ 
-	unitsFood := 0
+	gold := 0
 ]

@@ -5,8 +5,8 @@ Class {
 }
 
 { #category : #tests }
-StoneTest >> testGetFood [ 
+StoneTest >> testGetGold [
 	| stone |
-	stone := Rock new.
-	self assert: stone getFood equals: 0.
+	stone := Stone new.
+	self assert: stone getGold equals: 2.
 ]
