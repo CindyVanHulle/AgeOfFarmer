@@ -6,7 +6,7 @@ Class {
 
 { #category : #initialization }
 MontainCase >> getArmySize [
-	^ character taille + 2
+	^ character size + 2
 ]
 
 { #category : #initialization }

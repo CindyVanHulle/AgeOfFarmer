@@ -25,11 +25,11 @@ Army >> nbNourritureConsomme [
 ]
 
 { #category : #acccessing }
-Army >> stockOr [
-	^ stockOr
+Army >> size [
+	^ taille
 ]
 
 { #category : #acccessing }
-Army >> taille [
-	^ taille
+Army >> stockOr [
+	^ stockOr
 ]

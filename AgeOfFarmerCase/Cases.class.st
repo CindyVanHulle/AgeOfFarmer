@@ -11,7 +11,7 @@ Class {
 
 { #category : #acccessing }
 Cases >> getArmySize [
-	^ character taille
+	^ character size
 ]
 
 { #category : #acccessing }

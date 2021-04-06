@@ -26,3 +26,11 @@ DesertCasesTest >> testGetPoints [
 	d := DesertCase new.
 	self assert: (d getPoints ) equals: 4.
 ]
+
+{ #category : #tests }
+DesertCasesTest >> testSetArmySuperiorAt3 [
+	| desert army |
+	desert := DesertCase new.
+	army := Army new.
+	self should: [ desert setCharacter: army ] raise: ArmyTooBigError
+]
