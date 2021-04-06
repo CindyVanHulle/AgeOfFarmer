@@ -31,7 +31,7 @@ MontainCasesTest >> testGetPoints [
 MontainCasesTest >> testHarvest [ 
 	| montain |
 	montain := MontainCase new.
-	self assert: montain harvest equals: #Stone
+	self assert: montain harvest className equals: #Stone
 ]
 
 { #category : #tests }

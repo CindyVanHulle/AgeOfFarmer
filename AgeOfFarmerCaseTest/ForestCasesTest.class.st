@@ -31,5 +31,5 @@ ForestCasesTest >> testGetPoints [
 ForestCasesTest >> testHarvest [ 
 	| forest |
 	forest := ForestCase new.
-	self assert: forest harvest equals: #Wood
+	self assert: forest harvest className equals: #Wood
 ]
