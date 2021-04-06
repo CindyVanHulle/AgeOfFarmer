@@ -19,7 +19,7 @@ CasesTest >> testGetPoints [
 	d := DesertCase new.
 	m := MontainCase new.
 	p := PlainCase new.
-	w := WoodCase new.
+	w := ForestCase new.
 	self assert: (d getPoints ) equals: 4.
 	self assert: m getPoints  equals: 4.
 	self assert: p getPoints equals: 1.
@@ -36,7 +36,7 @@ CasesTest >> testGetTailleArmy [
 	m setCharacter: army .
 	p := PlainCase new.
 	p setCharacter: army .
-	w := WoodCase new.
+	w := ForestCase new.
 	w setCharacter: army .
 	self assert: (d getTailleArmy  ) equals: 5.
 	self assert: m getTailleArmy  equals: 7.
@@ -50,7 +50,7 @@ CasesTest >> testGetTailleArmyMax [
 	d := DesertCase new.
 	m := MontainCase new.
 	p := PlainCase new.
-	w := WoodCase new.
+	w := ForestCase new.
 	self assert: (d getTailleArmyMax  ) equals: 3.
 	self assert: m getTailleArmyMax  equals: 3.
 	self assert: p getTailleArmyMax equals: 5.

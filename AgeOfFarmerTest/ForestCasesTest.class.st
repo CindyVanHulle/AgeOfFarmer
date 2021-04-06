@@ -1,28 +1,28 @@
 Class {
-	#name : #WoodCasesTest,
+	#name : #ForestCasesTest,
 	#superclass : #TestCase,
 	#category : #AgeOfFarmerTest
 }
 
 { #category : #tests }
-WoodCasesTest >> testGetPoints [
+ForestCasesTest >> testGetPoints [
 	| w |
-	w := WoodCase new.
+	w := ForestCase new.
 	self assert: w getPoints equals: 2.
 ]
 
 { #category : #tests }
-WoodCasesTest >> testGetTailleArmy [
+ForestCasesTest >> testGetTailleArmy [
 	| w army|
 	army := Army new.
-	w := WoodCase new.
+	w := ForestCase new.
 	w setCharacter: army .
 	self assert: w getTailleArmy equals: 5.
 ]
 
 { #category : #tests }
-WoodCasesTest >> testGetTailleArmyMax [
+ForestCasesTest >> testGetTailleArmyMax [
 	| w |
-	w := WoodCase new.
+	w := ForestCase new.
 	self assert: w getTailleArmyMax equals: 5.
 ]

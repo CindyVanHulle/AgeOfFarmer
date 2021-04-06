@@ -7,5 +7,5 @@ Class {
 { #category : #initialization }
 Wood >> initialize [
 
-	unityNourriture := 1
+	unitsFood := 1
 ]

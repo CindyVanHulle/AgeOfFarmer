@@ -7,5 +7,5 @@ Class {
 { #category : #initialization }
 Wheat >> initialize [
 
-	unityNourriture := 5
+	unitsFood := 5
 ]

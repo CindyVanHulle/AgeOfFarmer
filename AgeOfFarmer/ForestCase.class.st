@@ -1,16 +1,16 @@
 Class {
-	#name : #WoodCase,
+	#name : #ForestCase,
 	#superclass : #Cases,
 	#category : #AgeOfFarmer
 }
 
 { #category : #initialization }
-WoodCase >> initialize [
+ForestCase >> initialize [
 	super initialize .
 	points := 2
 ]
 
 { #category : #initialization }
-WoodCase >> printOn: aStream [
+ForestCase >> printOn: aStream [
 	aStream nextPutAll: 'W'.
 ]

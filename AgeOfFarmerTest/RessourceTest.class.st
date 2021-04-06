@@ -10,7 +10,7 @@ RessourceTest >> testGetNourriture [
 	w := Wood new.
 	b := Wheat new.
 	r := Ressource  new.
-	self assert: w getNourriture equals: 1.
-	self assert: b getNourriture equals: 5.
-	self assert: r getNourriture equals: 0.
+	self assert: w getFood equals: 1.
+	self assert: b getFood equals: 5.
+	self assert: r getFood equals: 0.
 ]

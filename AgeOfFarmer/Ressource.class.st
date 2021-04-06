@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #acccessing }
-Ressource >> getNourriture [
+Ressource >> getFood [
 
 	^ unitsFood
 ]
