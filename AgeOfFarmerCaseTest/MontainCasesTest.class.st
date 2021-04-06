@@ -26,3 +26,11 @@ MontainCasesTest >> testGetPoints [
 	m := MontainCase new.
 	self assert: m getPoints  equals: 4.
 ]
+
+{ #category : #tests }
+MontainCasesTest >> testSetArmySuperiorAt3 [
+	| montain army |
+	montain := MontainCase new.
+	army := Army new.
+	self should: [ montain setCharacter: army ] raise: ArmyTooBigError
+]
