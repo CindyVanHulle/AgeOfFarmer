@@ -2,9 +2,9 @@ Class {
 	#name : #Cases,
 	#superclass : #Object,
 	#instVars : [
-		'points',
 		'character',
-		'tailleArmyMax'
+		'tailleArmyMax',
+		'points'
 	],
 	#category : #AgeOfFarmerCase
 }
