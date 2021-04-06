@@ -15,6 +15,6 @@ Map1 >> createMap1 [
 	board at: 2 put: line;
 	at: 3 put: line;
 	at: 4 put: line;
-	at: 5 put line.
+	at: 5 put: line.
 	^ board
 ]
