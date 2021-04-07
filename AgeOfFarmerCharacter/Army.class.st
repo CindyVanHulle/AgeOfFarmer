@@ -28,6 +28,7 @@ Army >> costFood [
 
 { #category : #access }
 Army >> initialize [ 
+	super initialize.
 	size := 5.
 	position := 0@0.
 ]
