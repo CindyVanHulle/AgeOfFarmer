@@ -8,5 +8,5 @@ Class {
 StoneTest >> testGetGold [
 	| stone |
 	stone := Stone new.
-	self assert: stone getGold equals: 2.
+	self assert: stone gold equals: 2.
 ]

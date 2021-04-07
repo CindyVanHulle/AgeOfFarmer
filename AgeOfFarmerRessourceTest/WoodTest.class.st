@@ -8,12 +8,12 @@ Class {
 WoodTest >> testGetFood [ 
 	| wood |
 	wood := Wood new.
-	self assert: wood getFood equals: 1.
+	self assert: wood unitsFood equals: 1.
 ]
 
 { #category : #tests }
 WoodTest >> testGetGold [
 	| wood |
 	wood := Wood new.
-	self assert: wood getGold equals: 8.
+	self assert: wood gold equals: 8.
 ]

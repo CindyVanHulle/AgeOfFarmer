@@ -8,5 +8,5 @@ Class {
 SandTest >> testGetGold [
 	| sand |
 	sand := Sand new.
-	self assert: sand getGold equals: 5.
+	self assert: sand gold equals: 5.
 ]

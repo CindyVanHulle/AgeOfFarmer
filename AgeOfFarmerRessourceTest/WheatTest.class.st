@@ -8,12 +8,12 @@ Class {
 WheatTest >> testGetFood [ 
 	| wheat |
 	wheat := Wheat new.
-	self assert: wheat getFood equals: 5.
+	self assert: wheat unitsFood equals: 5.
 ]
 
 { #category : #tests }
 WheatTest >> testGetGold [
 	| wheat |
 	wheat := Wheat new.
-	self assert: wheat getGold equals: 2.
+	self assert: wheat gold equals: 2.
 ]

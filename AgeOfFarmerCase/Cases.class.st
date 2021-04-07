@@ -11,29 +11,24 @@ Class {
 }
 
 { #category : #acccessing }
-Cases >> getArmySize [
+Cases >> armySize [
 	^ character size
 ]
 
 { #category : #acccessing }
-Cases >> getArmySizeMax [
+Cases >> armySizeMax [
 	^ armySizeMax
 ]
 
 { #category : #acccessing }
-Cases >> getCharacter [
+Cases >> character [
 	^ character
 ]
 
 { #category : #acccessing }
-Cases >> getPoints [
-
-	^ points
-]
-
-{ #category : #access }
-Cases >> getRessource [
-	^ ressource 
+Cases >> character: aTypeCharacter [
+	character := aTypeCharacter.
+	armySizeMax := 5.
 ]
 
 { #category : #acccessing }
@@ -42,17 +37,22 @@ Cases >> initialize [
 ]
 
 { #category : #acccessing }
+Cases >> points [
+
+	^ points
+]
+
+{ #category : #acccessing }
 Cases >> printOn: aStream [
 	aStream nextPutAll: 'O'.
 ]
 
-{ #category : #acccessing }
-Cases >> setCharacter: aTypeCharacter [
-	character := aTypeCharacter.
-	armySizeMax := 5.
+{ #category : #access }
+Cases >> ressource [
+	^ ressource 
 ]
 
 { #category : #setter }
-Cases >> setRessource: aRessource [
+Cases >> ressource: aRessource [
 	ressource := aRessource.
 ]
