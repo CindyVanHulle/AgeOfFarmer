@@ -59,6 +59,11 @@ Player >> initialize [
 	score := 0.
 ]
 
+{ #category : #moves }
+Player >> move: aCharacter at: aCases [ 
+	aCharacter position: aCases.
+]
+
 { #category : #access }
 Player >> numberOfTerritory [
 	^ numberOfTerritory

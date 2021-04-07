@@ -111,3 +111,14 @@ PlayerTest >> testGetWoodStock [
 	player := Player new.
 	self assert: player woodStock equals: 0
 ]
+
+{ #category : #tests }
+PlayerTest >> testMoveCharacter [
+	| player case character |
+	player := Player new.
+	case := Cases new.
+	character := TypeCharacter new.
+	player move: character at: case.
+	self assert: character position className equals: #Cases.
+	self assert: case characterEnabled equals: true.
+]
