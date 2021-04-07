@@ -13,8 +13,8 @@ Farmer >> initialize [
 ]
 
 { #category : #access }
-Farmer >> position [ 
-	^ position.
+Farmer >> position [
+	^ position
 ]
 
 { #category : #setter }
