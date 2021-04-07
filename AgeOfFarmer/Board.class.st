@@ -30,5 +30,5 @@ Board >> getElementAt: anInteger [
 { #category : #acccessing }
 Board >> initialize [ 
 	super initialize .
-	board := OrderedCollection new.
+	board := Array new.
 ]

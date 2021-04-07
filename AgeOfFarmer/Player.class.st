@@ -2,89 +2,92 @@ Class {
 	#name : #Player,
 	#superclass : #Object,
 	#instVars : [
-		'nbPieces',
-		'nbTerritoire',
-		'nbGuerrier',
-		'nbNourriture'
+		'gold',
+		'territory',
+		'warrior',
+		'food'
 	],
 	#category : #AgeOfFarmer
 }
 
 { #category : #initialization }
-Player >> decrementNbGuerrier [
-	nbGuerrier  := nbGuerrier - 1
+Player >> decrementFood [
+	food <=0 ifTrue: [ food := 0] ifFalse: [food := food - 1].
+	
 ]
 
 { #category : #initialization }
-Player >> decrementNbGuerrierOf: anInteger [
-	nbGuerrier  := nbGuerrier - anInteger
+Player >> decrementGold [
+	gold <=0 ifTrue: [ gold := 0] ifFalse: [gold:= gold - 1].
+	
 ]
 
 { #category : #initialization }
-Player >> decrementNbNourriture [
-	nbNourriture   := nbNourriture - 1
+Player >> decrementTerritory [
+	territory <=0 ifTrue: [ territory := 0] ifFalse: [territory := territory - 1].
+	
 ]
 
 { #category : #initialization }
-Player >> decrementNbOr [
-	nbPieces := nbPieces - 1
+Player >> decrementWarrior [
+	warrior <=0 ifTrue: [ warrior := 0] ifFalse: [warrior := warrior - 1].
 ]
 
 { #category : #initialization }
-Player >> decrementNbTerritoire [
-	nbTerritoire  := nbTerritoire - 1
+Player >> decrementWarriorWith: anInteger [
+	warrior - anInteger  <=0 ifTrue: [ warrior := 0] ifFalse: [warrior := warrior - anInteger ].
 ]
 
 { #category : #initialization }
-Player >> getNbGuerrier [
-	^ nbGuerrier 
+Player >> getFood [
+	^ food 
 ]
 
 { #category : #initialization }
-Player >> getNbNourriture [
-	^ nbNourriture 
+Player >> getGold [
+	^ gold  
 ]
 
 { #category : #initialization }
-Player >> getNbOr [
-	^ nbPieces  
+Player >> getTerritory [
+	^ territory   
 ]
 
 { #category : #initialization }
-Player >> getNbTerritoire [
-	^ nbTerritoire   
+Player >> getWarrior [
+	^ warrior 
 ]
 
 { #category : #initialization }
-Player >> incrementNbGuerrier [
-	nbGuerrier  := nbGuerrier + 1
+Player >> incrementFood [
+	food   := food + 1
 ]
 
 { #category : #initialization }
-Player >> incrementNbGuerrierOf: anInteger [
-	nbGuerrier  := nbGuerrier + anInteger
+Player >> incrementGold [
+	gold := gold + 1
 ]
 
 { #category : #initialization }
-Player >> incrementNbNourriture [
-	nbNourriture   := nbNourriture + 1
+Player >> incrementTerritory [
+	territory  := territory + 1
 ]
 
 { #category : #initialization }
-Player >> incrementNbOr [
-	nbPieces := nbPieces + 1
+Player >> incrementWarrior [
+	warrior  := warrior + 1
 ]
 
 { #category : #initialization }
-Player >> incrementNbTerritoire [
-	nbTerritoire  := nbTerritoire + 1
+Player >> incrementWarriorWith: anInteger [
+	warrior  := warrior + anInteger
 ]
 
 { #category : #initialization }
 Player >> initialize [
 
-	nbPieces := 0.
-	nbTerritoire := 0.
-	nbGuerrier := 35.
-	nbNourriture := 10
+	gold := 0.
+	territory := 0.
+	warrior := 35.
+	food := 10
 ]
