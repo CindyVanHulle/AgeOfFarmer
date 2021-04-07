@@ -5,14 +5,20 @@ Class {
 }
 
 { #category : #initialization }
-MontainCase >> getArmySize [
+MontainCase >> armySize [
 	^ character size
 ]
 
 { #category : #initialization }
-MontainCase >> getArmySizeMax [
+MontainCase >> armySizeMax [
 	
 	^ armySizeMax
+]
+
+{ #category : #acccessing }
+MontainCase >> character: anCharacter [
+	anCharacter size > armySizeMax ifTrue: [ ArmyTooBigError new signal: 'your army is too big'].
+	super character: anCharacter.
 ]
 
 { #category : #creation }
@@ -30,10 +36,4 @@ MontainCase >> initialize [
 { #category : #initialization }
 MontainCase >> printOn: aStream [
 	aStream nextPutAll: 'M'.
-]
-
-{ #category : #acccessing }
-MontainCase >> setCharacter: anCharacter [
-	anCharacter size > armySizeMax ifTrue: [ ArmyTooBigError new signal: 'your army is too big'].
-	super setCharacter: anCharacter.
 ]

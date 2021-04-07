@@ -5,9 +5,16 @@ Class {
 }
 
 { #category : #initialization }
-DesertCase >> getArmySizeMax [
+DesertCase >> armySizeMax [
 	
 	^ armySizeMax
+]
+
+{ #category : #acccessing }
+DesertCase >> character: anCharacter [
+	anCharacter size > armySizeMax ifTrue: [ ArmyTooBigError new signal: 'your army is too big'].
+	super character: anCharacter.
+	
 ]
 
 { #category : #creation }
@@ -25,11 +32,4 @@ DesertCase >> initialize [
 { #category : #initialization }
 DesertCase >> printOn: aStream [
 	aStream nextPutAll: 'D'.
-]
-
-{ #category : #acccessing }
-DesertCase >> setCharacter: anCharacter [
-	anCharacter size > armySizeMax ifTrue: [ ArmyTooBigError new signal: 'your army is too big'].
-	super setCharacter: anCharacter.
-	
 ]

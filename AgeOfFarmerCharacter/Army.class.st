@@ -10,7 +10,12 @@ Class {
 
 { #category : #creating }
 Army class >> withArmySize: anInteger [ 
-	^ self new setSize: anInteger
+	^ self new size: anInteger
+]
+
+{ #category : #acccessing }
+Army >> costFood [
+	^ taille
 ]
 
 { #category : #acccessing }
@@ -25,18 +30,13 @@ Army >> initialize [
 ]
 
 { #category : #acccessing }
-Army >> nbNourritureConsomme [
-	^ taille
-]
-
-{ #category : #acccessing }
-Army >> setSize: anInteger [ 
-	taille := anInteger
-]
-
-{ #category : #acccessing }
 Army >> size [
 	^ taille
+]
+
+{ #category : #acccessing }
+Army >> size: anInteger [ 
+	taille := anInteger
 ]
 
 { #category : #acccessing }

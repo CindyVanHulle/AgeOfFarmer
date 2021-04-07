@@ -4,11 +4,6 @@ Class {
 	#category : #AgeOfFarmerRessource
 }
 
-{ #category : #access }
-Wheat >> getGold [
-	^gold
-]
-
 { #category : #initialization }
 Wheat >> initialize [
 	gold := 2.

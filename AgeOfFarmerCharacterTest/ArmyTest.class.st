@@ -16,6 +16,6 @@ ArmyTest >> testSetSize [
 	| army |
 	army := Army new.
 	self assert: army size equals: 5.
-	army setSize: 18.
+	army size: 18.
 	self assert: (army size) equals: 18
 ]

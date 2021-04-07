@@ -8,6 +8,6 @@ Class {
 }
 
 { #category : #acccessing }
-Food >> getFood [ 
+Food >> unitsFood [ 
 	^ unitsFood
 ]

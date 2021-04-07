@@ -9,22 +9,22 @@ ForestCasesTest >> testGetArmySize [
 	| w army|
 	army := Army new.
 	w := ForestCase new.
-	w setCharacter: army .
-	self assert: w getArmySize equals: 5.
+	w character: army .
+	self assert: w armySize equals: 5.
 ]
 
 { #category : #tests }
 ForestCasesTest >> testGetArmySizeMax [
 	| w |
 	w := ForestCase new.
-	self assert: w getArmySizeMax equals: 5.
+	self assert: w armySizeMax equals: 5.
 ]
 
 { #category : #tests }
 ForestCasesTest >> testGetPoints [
 	| w |
 	w := ForestCase new.
-	self assert: w getPoints equals: 2.
+	self assert: w points equals: 2.
 ]
 
 { #category : #tests }
