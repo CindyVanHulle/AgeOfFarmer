@@ -37,7 +37,7 @@ Army >> position [
 	^ position
 ]
 
-{ #category : #access }
+{ #category : #setter }
 Army >> setPosition: aPoint [
 	position := aPoint 
 ]

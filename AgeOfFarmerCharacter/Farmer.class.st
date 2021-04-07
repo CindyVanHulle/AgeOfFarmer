@@ -12,12 +12,12 @@ Farmer >> initialize [
 	position:= 0@0.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #access }
 Farmer >> position [ 
 	^ position.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #setter }
 Farmer >> setPosition: aPoint [  
 	position := aPoint
 ]
