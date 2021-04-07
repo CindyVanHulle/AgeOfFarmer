@@ -24,11 +24,3 @@ MontainCasesTest >> testHarvest [
 	montain := MontainCase new.
 	self assert: montain harvest className equals: #Stone
 ]
-
-{ #category : #tests }
-MontainCasesTest >> testSetArmySuperiorAt3 [
-	| montain army |
-	montain := MontainCase new.
-	army := Army new.
-	self should: [ montain character: army ] raise: ArmyTooBigError
-]

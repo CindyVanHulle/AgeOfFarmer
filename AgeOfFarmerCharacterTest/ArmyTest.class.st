@@ -19,6 +19,22 @@ ArmyTest >> testInitializeWithASizeArmy [
 ]
 
 { #category : #tests }
+ArmyTest >> testSetArmySuperiorAt3OnDesert [
+	| desert army |
+	desert := MontainCase new.
+	army := Army new.
+	self should: [ army position: desert] raise: ArmyTooBigError
+]
+
+{ #category : #tests }
+ArmyTest >> testSetArmySuperiorAt3OnMontain [
+	| montain army |
+	montain := MontainCase new.
+	army := Army new.
+	self should: [ army position: montain] raise: ArmyTooBigError
+]
+
+{ #category : #tests }
 ArmyTest >> testSetPosition [
 	| army case |
 	army := Army new.

@@ -24,11 +24,3 @@ DesertCasesTest >> testHarvest [
 	desert := DesertCase new.
 	self assert: desert harvest className equals: #Sand
 ]
-
-{ #category : #tests }
-DesertCasesTest >> testSetArmySuperiorAt3 [
-	| desert army |
-	desert := DesertCase new.
-	army := Army new.
-	self should: [ desert character: army ] raise: ArmyTooBigError
-]
