@@ -2,7 +2,8 @@ Class {
 	#name : #TypeCharacter,
 	#superclass : #Object,
 	#instVars : [
-		'player'
+		'player',
+		'position'
 	],
 	#classInstVars : [
 		'player'
