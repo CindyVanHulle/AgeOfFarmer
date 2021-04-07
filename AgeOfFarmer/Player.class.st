@@ -10,7 +10,8 @@ Class {
 		'numberOfWarriors',
 		'unitsOfFoods',
 		'numberOfTerritory',
-		'score'
+		'score',
+		'listOfUnits'
 	],
 	#category : #AgeOfFarmer
 }
@@ -57,6 +58,12 @@ Player >> initialize [
 	unitsOfFoods := 10.
 	numberOfTerritory := 0.
 	score := 0.
+	listOfUnits := LinkedList new.
+]
+
+{ #category : #access }
+Player >> listOfUnits [
+	^ listOfUnits
 ]
 
 { #category : #moves }

@@ -113,6 +113,13 @@ PlayerTest >> testGetWoodStock [
 ]
 
 { #category : #tests }
+PlayerTest >> testListAtInitialization [
+	| player |
+	player := Player new.
+	self assert: player listOfUnits isEmpty equals: true.
+]
+
+{ #category : #tests }
 PlayerTest >> testMoveCharacter [
 	| player case character |
 	player := Player new.
