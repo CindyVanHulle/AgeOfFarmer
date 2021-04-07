@@ -2,89 +2,85 @@ Class {
 	#name : #Player,
 	#superclass : #Object,
 	#instVars : [
-		'nbPieces',
-		'nbTerritoire',
-		'nbGuerrier',
-		'nbNourriture'
+		'goldStock',
+		'woodStock',
+		'wheatStock',
+		'sandStock',
+		'stoneStock',
+		'numberOfWarriors',
+		'unitsOfFoods'
 	],
 	#category : #AgeOfFarmer
 }
 
-{ #category : #initialization }
-Player >> decrementNbGuerrier [
-	nbGuerrier  := nbGuerrier - 1
+{ #category : #adding }
+Player >> addGold: anQuantity [
+	goldStock := goldStock + anQuantity.
 ]
 
-{ #category : #initialization }
-Player >> decrementNbGuerrierOf: anInteger [
-	nbGuerrier  := nbGuerrier - anInteger
+{ #category : #adding }
+Player >> addSand: anQuantity [
+	sandStock := sandStock + anQuantity.
 ]
 
-{ #category : #initialization }
-Player >> decrementNbNourriture [
-	nbNourriture   := nbNourriture - 1
+{ #category : #adding }
+Player >> addStone: anQuantity [ 
+	stoneStock := stoneStock + anQuantity.
 ]
 
-{ #category : #initialization }
-Player >> decrementNbOr [
-	nbPieces := nbPieces - 1
+{ #category : #adding }
+Player >> addWheat: anQuantity [
+	wheatStock := wheatStock + anQuantity.
 ]
 
-{ #category : #initialization }
-Player >> decrementNbTerritoire [
-	nbTerritoire  := nbTerritoire - 1
+{ #category : #adding }
+Player >> addWood: anQuantity [ 
+	woodStock := woodStock + anQuantity.
 ]
 
-{ #category : #initialization }
-Player >> getNbGuerrier [
-	^ nbGuerrier 
-]
-
-{ #category : #initialization }
-Player >> getNbNourriture [
-	^ nbNourriture 
-]
-
-{ #category : #initialization }
-Player >> getNbOr [
-	^ nbPieces  
-]
-
-{ #category : #initialization }
-Player >> getNbTerritoire [
-	^ nbTerritoire   
-]
-
-{ #category : #initialization }
-Player >> incrementNbGuerrier [
-	nbGuerrier  := nbGuerrier + 1
-]
-
-{ #category : #initialization }
-Player >> incrementNbGuerrierOf: anInteger [
-	nbGuerrier  := nbGuerrier + anInteger
-]
-
-{ #category : #initialization }
-Player >> incrementNbNourriture [
-	nbNourriture   := nbNourriture + 1
-]
-
-{ #category : #initialization }
-Player >> incrementNbOr [
-	nbPieces := nbPieces + 1
-]
-
-{ #category : #initialization }
-Player >> incrementNbTerritoire [
-	nbTerritoire  := nbTerritoire + 1
+{ #category : #access }
+Player >> goldStock [
+	^ goldStock
 ]
 
 { #category : #initialization }
 Player >> initialize [
 
-	nbPieces := 0.
-	nbTerritoire := 0.
-	nbGuerrier := 35.
-	nbNourriture := 10
+	goldStock := 0.
+	woodStock := 0.
+	wheatStock := 0.
+	stoneStock := 0.
+	sandStock := 0.
+	numberOfWarriors := 35.
+	unitsOfFoods := 10.
+]
+
+{ #category : #access }
+Player >> numberOfWarriors [
+	^ numberOfWarriors.
+]
+
+{ #category : #access }
+Player >> sandStock [
+	^ sandStock
+]
+
+{ #category : #access }
+Player >> stoneStock [
+	^ stoneStock
+]
+
+{ #category : #access }
+Player >> unitsOfFoods [
+	^ unitsOfFoods.
+]
+
+{ #category : #access }
+Player >> wheatStock [
+	^ wheatStock
+]
+
+{ #category : #access }
+Player >> woodStock [
+	^ woodStock
 ]

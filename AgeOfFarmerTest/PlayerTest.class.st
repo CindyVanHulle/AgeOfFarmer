@@ -5,109 +5,95 @@ Class {
 }
 
 { #category : #tests }
-PlayerTest >> testDecrementGuerrier [
-	| p |
-	p := Player new.
-	p decrementNbGuerrier.
-	self assert: (p getNbGuerrier ) equals: 34
+PlayerTest >> testAddGoldSotck [
+	| player previousStock |
+	player := Player new.
+	previousStock := player goldStock.
+	player addGold: 5.
+	self assert: player goldStock equals: previousStock + 5.
 ]
 
 { #category : #tests }
-PlayerTest >> testDecrementGuerrierWith [
-	| p |
-	p := Player new.
-	p decrementNbGuerrierOf: 20 .
-	self assert: (p getNbGuerrier ) equals: 15
+PlayerTest >> testAddSandSotck [
+	| player previousStock |
+	player := Player new.
+	previousStock := player sandStock.
+	player addSand: 5.
+	self assert: player sandStock equals: previousStock + 5.
 ]
 
 { #category : #tests }
-PlayerTest >> testDecrementNourriture [
-	| p |
-	p := Player new.
-	p decrementNbNourriture.
-	self assert: (p getNbNourriture ) equals: 9
+PlayerTest >> testAddStoneSotck [
+	| player previousStock |
+	player := Player new.
+	previousStock := player stoneStock.
+	player addStone: 5.
+	self assert: player stoneStock equals: previousStock + 5.
 ]
 
 { #category : #tests }
-PlayerTest >> testDecrementOr [
-	| p |
-	p := Player new.
-	p decrementNbOr.
-	self assert: (p getNbOr ) equals: 0
+PlayerTest >> testAddWheatSotck [
+	| player previousStock |
+	player := Player new.
+	previousStock := player wheatStock.
+	player addWheat: 5.
+	self assert: player wheatStock equals: previousStock + 5.
 ]
 
 { #category : #tests }
-PlayerTest >> testDecrementTerritoire [
-	| p |
-	p := Player new.
-	p decrementNbTerritoire .
-	self assert: (p getNbTerritoire ) equals: 0
+PlayerTest >> testAddWoodSotck [
+	| player previousStock |
+	player := Player new.
+	previousStock := player woodStock.
+	player addWood: 5.
+	self assert: player woodStock equals: previousStock + 5.
 ]
 
 { #category : #tests }
-PlayerTest >> testGetGuerrier [
-	| p |
-	p := Player new.
-	self assert: (p getNbGuerrier ) equals: 35
+PlayerTest >> testGetGoldStock [
+	| player |
+	player := Player new.
+	self assert: player goldStock equals: 0
 ]
 
 { #category : #tests }
-PlayerTest >> testGetNourriture [
-	| p |
-	p := Player new.
-	self assert: (p getNbNourriture ) equals: 10
+PlayerTest >> testGetNumberOfWarriors [
+	| player |
+	player := Player new.
+	self assert: player numberOfWarriors equals: 35.
 ]
 
 { #category : #tests }
-PlayerTest >> testGetOr [
-	| p |
-	p := Player new.
-	self assert: (p getNbOr ) equals: 0
+PlayerTest >> testGetSandStock [
+	| player |
+	player := Player new.
+	self assert: player sandStock equals: 0
 ]
 
 { #category : #tests }
-PlayerTest >> testGetTerritoire [
-	| p |
-	p := Player new.
-	self assert: (p getNbTerritoire ) equals: 0
+PlayerTest >> testGetStoneStock [
+	| player |
+	player := Player new.
+	self assert: player stoneStock equals: 0
 ]
 
 { #category : #tests }
-PlayerTest >> testIncrementGuerrier [
-	| p |
-	p := Player new.
-	p incrementNbGuerrier.
-	self assert: (p getNbGuerrier ) equals: 36
+PlayerTest >> testGetUnitsOfFoods [
+	| player |
+	player := Player new.
+	self assert: player unitsOfFoods equals: 10.
 ]
 
 { #category : #tests }
-PlayerTest >> testIncrementGuerrierWith [
-	| p |
-	p := Player new.
-	p incrementNbGuerrierOf: 20.
-	self assert: (p getNbGuerrier ) equals: 55
+PlayerTest >> testGetWheatStock [
+	| player |
+	player := Player new.
+	self assert: player wheatStock equals: 0
 ]
 
 { #category : #tests }
-PlayerTest >> testIncrementNourriture [
-	| p |
-	p := Player new.
-	p incrementNbNourriture.
-	self assert: (p getNbNourriture ) equals: 11
-]
-
-{ #category : #tests }
-PlayerTest >> testIncrementOr [
-	| p |
-	p := Player new.
-	p incrementNbOr.
-	self assert: (p getNbOr ) equals: 1
-]
-
-{ #category : #tests }
-PlayerTest >> testIncrementTerritoire [
-	| p |
-	p := Player new.
-	p incrementNbTerritoire.
-	self assert: (p getNbTerritoire ) equals: 1
+PlayerTest >> testGetWoodStock [
+	| player |
+	player := Player new.
+	self assert: player woodStock equals: 0
 ]
