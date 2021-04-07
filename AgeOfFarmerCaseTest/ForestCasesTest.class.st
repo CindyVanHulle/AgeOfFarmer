@@ -5,15 +5,6 @@ Class {
 }
 
 { #category : #tests }
-ForestCasesTest >> testGetArmySize [
-	| w army|
-	army := Army new.
-	w := ForestCase new.
-	w character: army .
-	self assert: w armySize equals: 5.
-]
-
-{ #category : #tests }
 ForestCasesTest >> testGetArmySizeMax [
 	| w |
 	w := ForestCase new.

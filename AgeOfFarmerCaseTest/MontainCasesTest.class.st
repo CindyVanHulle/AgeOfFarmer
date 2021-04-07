@@ -5,15 +5,6 @@ Class {
 }
 
 { #category : #tests }
-MontainCasesTest >> testGetArmySize [
-	| m army|
-	army := Army withArmySize: 3.
-	m := MontainCase new.
-	m character: army .
-	self assert: m armySize  equals: 3.
-]
-
-{ #category : #tests }
 MontainCasesTest >> testGetArmySizeMax [
 	| m |
 	m := MontainCase new.

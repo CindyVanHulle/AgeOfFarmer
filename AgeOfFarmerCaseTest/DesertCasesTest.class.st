@@ -5,15 +5,6 @@ Class {
 }
 
 { #category : #tests }
-DesertCasesTest >> testGetArmySize [
-	| d army|
-	army := Army withArmySize: 3.
-	d := DesertCase new.
-	d character: army .
-	self assert: (d armySize  ) equals: 3.
-]
-
-{ #category : #tests }
 DesertCasesTest >> testGetArmySizeMax [
 	| d |
 	d := DesertCase new.

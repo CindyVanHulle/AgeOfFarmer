@@ -5,15 +5,6 @@ Class {
 }
 
 { #category : #tests }
-PlainCasesTest >> testGetArmySize [
-	| p army|
-	army := Army new.
-	p := PlainCase new.
-	p character: army .
-	self assert: p armySize equals: 5.
-]
-
-{ #category : #tests }
 PlainCasesTest >> testGetArmySizeMax [
 	| p |
 	p := PlainCase new.

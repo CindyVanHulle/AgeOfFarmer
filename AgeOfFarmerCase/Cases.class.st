@@ -3,17 +3,17 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'points',
-		'character',
 		'armySizeMax',
 		'ressource',
-		'player'
+		'player',
+		'characterEnabled'
 	],
 	#category : #AgeOfFarmerCase
 }
 
 { #category : #acccessing }
 Cases >> armySize [
-	^ character size
+	^ characterEnabled size
 ]
 
 { #category : #acccessing }
@@ -22,19 +22,24 @@ Cases >> armySizeMax [
 ]
 
 { #category : #acccessing }
-Cases >> character [
-	^ character
+Cases >> characterEnabled [
+	^ characterEnabled
 ]
 
 { #category : #acccessing }
-Cases >> character: aTypeCharacter [
-	character := aTypeCharacter.
-	armySizeMax := 5.
+Cases >> characterEnabledOff [
+	characterEnabled := false.
+]
+
+{ #category : #acccessing }
+Cases >> characterEnabledOn [
+	characterEnabled := true.
 ]
 
 { #category : #acccessing }
 Cases >> initialize [ 
-	armySizeMax := 5
+	armySizeMax := 5.
+	characterEnabled := false.
 ]
 
 { #category : #access }

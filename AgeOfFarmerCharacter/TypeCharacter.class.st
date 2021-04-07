@@ -33,5 +33,6 @@ TypeCharacter >> position [
 
 { #category : #accessing }
 TypeCharacter >> position: anCase [
+	anCase characterEnabledOn.
 	position := anCase.
 ]

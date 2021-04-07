@@ -10,13 +10,6 @@ DesertCase >> armySizeMax [
 	^ armySizeMax
 ]
 
-{ #category : #acccessing }
-DesertCase >> character: anCharacter [
-	anCharacter size > armySizeMax ifTrue: [ ArmyTooBigError new signal: 'your army is too big'].
-	super character: anCharacter.
-	
-]
-
 { #category : #creation }
 DesertCase >> harvest [
 	^ Sand new.

@@ -20,10 +20,11 @@ ArmyTest >> testInitializeWithASizeArmy [
 
 { #category : #tests }
 ArmyTest >> testSetPosition [
-	| army |
+	| army case |
 	army := Army new.
-	army position: 5@6.
-	self assert: army position equals: 5@6.
+	case := Cases new.
+	army position: case.
+	self assert: army position className equals: #Cases.
 ]
 
 { #category : #tests }

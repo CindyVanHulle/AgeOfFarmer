@@ -32,6 +32,12 @@ Army >> initialize [
 	position := 0@0.
 ]
 
+{ #category : #accessing }
+Army >> position: anCase [
+	self size <= anCase armySizeMax ifTrue: [ super position: anCase ]
+	ifFalse: [ ArmyTooBigError new signal: 'your army is too big' ]
+]
+
 { #category : #access }
 Army >> size [
 	^ size

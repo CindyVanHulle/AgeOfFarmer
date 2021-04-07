@@ -13,8 +13,9 @@ FarmerTest >> testGetPosition [
 
 { #category : #tests }
 FarmerTest >> testSetPosition [
-	| farmer |
+	| farmer case |
 	farmer := Farmer new.
-	farmer position: 4@2 .
-	self assert: farmer position equals: 4@2.
+	case := Cases new.
+	farmer position: case.
+	self assert: farmer position className equals: #Cases.
 ]

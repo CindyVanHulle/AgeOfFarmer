@@ -5,12 +5,19 @@ Class {
 }
 
 { #category : #tests }
-CasesTest >> testGetAndSetCharacter [
-	| c army |
-	c := Cases new.
-	army := Army new.
-	c character: army .
-	self assert: (c character ) equals: army 
+CasesTest >> testCharacterEnabledOff [
+	| case |
+	case := Cases new.
+	case characterEnabledOff.
+	self assert: case characterEnabled equals: false
+]
+
+{ #category : #tests }
+CasesTest >> testCharacterEnabledOn [
+	| case |
+	case := Cases new.
+	case characterEnabledOn.
+	self assert: case characterEnabled equals: true
 ]
 
 { #category : #tests }

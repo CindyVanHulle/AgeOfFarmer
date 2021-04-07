@@ -6,19 +6,13 @@ Class {
 
 { #category : #initialization }
 MontainCase >> armySize [
-	^ character size
+	^ characterEnabled size
 ]
 
 { #category : #initialization }
 MontainCase >> armySizeMax [
 	
 	^ armySizeMax
-]
-
-{ #category : #acccessing }
-MontainCase >> character: anCharacter [
-	anCharacter size > armySizeMax ifTrue: [ ArmyTooBigError new signal: 'your army is too big'].
-	super character: anCharacter.
 ]
 
 { #category : #creation }
