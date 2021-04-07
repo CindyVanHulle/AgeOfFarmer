@@ -25,3 +25,13 @@ TypeCharacter class >> with: anPlayer [
 TypeCharacter >> player: anPlayer [
 	player := anPlayer. 
 ]
+
+{ #category : #accessing }
+TypeCharacter >> position [
+	^ position
+]
+
+{ #category : #accessing }
+TypeCharacter >> position: anCase [
+	position := anCase.
+]

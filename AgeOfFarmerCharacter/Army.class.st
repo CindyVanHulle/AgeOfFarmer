@@ -33,16 +33,6 @@ Army >> initialize [
 ]
 
 { #category : #access }
-Army >> position [
-	^ position
-]
-
-{ #category : #setter }
-Army >> position: aPoint [
-	position := aPoint 
-]
-
-{ #category : #access }
 Army >> size [
 	^ size
 ]
