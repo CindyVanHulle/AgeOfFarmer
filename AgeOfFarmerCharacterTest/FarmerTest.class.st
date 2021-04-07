@@ -10,3 +10,11 @@ FarmerTest >> testGetPosition [
 	farmer := Farmer new.
 	self assert: farmer position equals: 0@0.
 ]
+
+{ #category : #tests }
+FarmerTest >> testSetPosition [
+	| farmer |
+	farmer := Farmer new.
+	farmer setPosition: 5@6.
+	self assert: farmer position equals: 5@6.
+]
