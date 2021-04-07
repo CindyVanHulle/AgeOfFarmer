@@ -2,8 +2,7 @@ Class {
 	#name : #Army,
 	#superclass : #TypeCharacter,
 	#instVars : [
-		'size',
-		'position'
+		'size'
 	],
 	#classInstVars : [
 		'position'
