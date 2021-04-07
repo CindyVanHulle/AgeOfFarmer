@@ -19,6 +19,14 @@ ArmyTest >> testInitializeWithASizeArmy [
 ]
 
 { #category : #tests }
+ArmyTest >> testSetPosition [
+	| army |
+	army := Army new.
+	army position: 5@6.
+	self assert: army position equals: 5@6.
+]
+
+{ #category : #tests }
 ArmyTest >> testSetSize [
 	| army |
 	army := Army new.
