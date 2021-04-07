@@ -13,6 +13,6 @@ Farmer >> position [
 ]
 
 { #category : #setter }
-Farmer >> setPosition: aPoint [  
+Farmer >> position: aPoint [  
 	position := aPoint
 ]

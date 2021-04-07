@@ -38,7 +38,7 @@ Army >> position [
 ]
 
 { #category : #setter }
-Army >> setPosition: aPoint [
+Army >> position: aPoint [
 	position := aPoint 
 ]
 
