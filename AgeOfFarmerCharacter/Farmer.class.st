@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #access }
+Farmer >> initialize [
+	position := 0@0.
+]
+
+{ #category : #access }
 Farmer >> position [ 
 	^ position.
 ]
