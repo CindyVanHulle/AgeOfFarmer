@@ -38,6 +38,11 @@ Army >> position [
 ]
 
 { #category : #access }
+Army >> setPosition: aPoint [
+	position := aPoint 
+]
+
+{ #category : #access }
 Army >> size [
 	^ size
 ]
