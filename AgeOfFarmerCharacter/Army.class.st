@@ -38,6 +38,11 @@ Army >> position: anCase [
 	ifFalse: [ ArmyTooBigError new signal: 'your army is too big' ]
 ]
 
+{ #category : #printing }
+Army >> printOn: aStream [
+	aStream nextPutAll: 'Army'.
+]
+
 { #category : #access }
 Army >> size [
 	^ size
