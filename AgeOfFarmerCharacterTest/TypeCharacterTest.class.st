@@ -9,5 +9,5 @@ TypeCharacterTest >> testGetPlayer [
 	| player character |
 	player := Player new.
 	character := TypeCharacter with: player.
-	self assert: character player equals: player.
+	self assert: character player className equals: #Player.
 ]

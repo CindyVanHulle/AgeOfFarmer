@@ -5,7 +5,8 @@ Class {
 		'points',
 		'character',
 		'armySizeMax',
-		'ressource'
+		'ressource',
+		'player'
 	],
 	#category : #AgeOfFarmerCase
 }
@@ -34,6 +35,16 @@ Cases >> character: aTypeCharacter [
 { #category : #acccessing }
 Cases >> initialize [ 
 	armySizeMax := 5
+]
+
+{ #category : #access }
+Cases >> player [
+	^ player
+]
+
+{ #category : #creating }
+Cases >> player: aPlayer [ 
+	player := aPlayer
 ]
 
 { #category : #acccessing }

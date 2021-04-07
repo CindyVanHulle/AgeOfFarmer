@@ -14,6 +14,15 @@ CasesTest >> testGetAndSetCharacter [
 ]
 
 { #category : #tests }
+CasesTest >> testGetAndSetPlayer [
+	| player case |
+	player := Player new.
+	case := Cases new.
+	case player: player.
+	self assert: case player className equals: #Player.
+]
+
+{ #category : #tests }
 CasesTest >> testGetAndSetRessource [
 	| case ressource |
 	case := Cases new.

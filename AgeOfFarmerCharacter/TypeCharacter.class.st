@@ -17,5 +17,10 @@ TypeCharacter class >> player [
 
 { #category : #'instance creation' }
 TypeCharacter class >> with: anPlayer [
-	player := anPlayer.
+	self new player: anPlayer.
+]
+
+{ #category : #creating }
+TypeCharacter >> player: anPlayer [
+	player := anPlayer. 
 ]
