@@ -2,44 +2,47 @@ Class {
 	#name : #Army,
 	#superclass : #TypeCharacter,
 	#instVars : [
-		'taille',
-		'stockOr'
+		'size',
+		'position'
+	],
+	#classInstVars : [
+		'position'
 	],
 	#category : #AgeOfFarmerCharacter
 }
+
+{ #category : #access }
+Army class >> position [
+	^ position.
+]
 
 { #category : #creating }
 Army class >> withArmySize: anInteger [ 
 	^ self new size: anInteger
 ]
 
-{ #category : #acccessing }
+{ #category : #access }
 Army >> costFood [
-	^ taille
+	^ size
 ]
 
-{ #category : #acccessing }
-Army >> incrementOr [
-	stockOr := stockOr + 1
-]
-
-{ #category : #acccessing }
+{ #category : #access }
 Army >> initialize [ 
-	taille := 5.
-	stockOr := 0.
+	size := 5.
+	position := 0@0.
 ]
 
-{ #category : #acccessing }
+{ #category : #access }
+Army >> position [
+	^ position
+]
+
+{ #category : #access }
 Army >> size [
-	^ taille
+	^ size
 ]
 
-{ #category : #acccessing }
+{ #category : #access }
 Army >> size: anInteger [ 
-	taille := anInteger
-]
-
-{ #category : #acccessing }
-Army >> stockOr [
-	^ stockOr
+	size := anInteger
 ]

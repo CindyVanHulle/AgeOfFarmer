@@ -5,6 +5,13 @@ Class {
 }
 
 { #category : #tests }
+ArmyTest >> testGetPosition [
+	| army |
+	army := Army new.
+	self assert: Army position equals: 0@0.
+]
+
+{ #category : #tests }
 ArmyTest >> testInitializeWithASizeArmy [
 	| army |
 	army := Army withArmySize: 52.
