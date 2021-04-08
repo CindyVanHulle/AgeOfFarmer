@@ -42,6 +42,13 @@ Player >> addWood: anQuantity [
 ]
 
 { #category : #access }
+Player >> askSomethingToPlayer: aStream [
+	| action |
+	action := UIManager default request: aStream .
+	^ action
+]
+
+{ #category : #access }
 Player >> goldStock [
 	^ goldStock
 ]
