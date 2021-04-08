@@ -11,20 +11,20 @@ Class {
 	#category : #AgeOfFarmerCharacter
 }
 
-{ #category : #access }
-TypeCharacter class >> player [
-	^ player
-]
-
 { #category : #'instance creation' }
 TypeCharacter class >> with: anPlayer [
-	self new player: anPlayer.
+	^ self new player: anPlayer.
 ]
 
 { #category : #initialization }
 TypeCharacter >> initialize [ 
 	super initialize.
 	position := Cases new.
+]
+
+{ #category : #access }
+TypeCharacter >> player [
+	^ player
 ]
 
 { #category : #creating }
