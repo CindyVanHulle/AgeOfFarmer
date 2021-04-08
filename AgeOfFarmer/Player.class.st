@@ -81,7 +81,7 @@ Player >> numberOfWarriors [
 	^ numberOfWarriors.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #moves }
 Player >> placeAnArmy: anCase with: anSize [
 	(Army withArmySize: anSize) position: anCase.
 	numberOfWarriors := numberOfWarriors - anSize.
