@@ -21,10 +21,10 @@ Map1 >> createMap1 [
 
 { #category : #creation }
 Map1 >> createMap2 [
-	| board |
+	| board cell |
 	board :=Array2D rows: 6 columns: 7.
-	board indicesCollect: [ :i :j | self newOceanCellAt: i at: j  ].
-	^ board
+	cell := board indicesCollect: [ :i :j | self newOceanCellAt: i at: j  ].
+	^ cell
 ]
 
 { #category : #creation }
