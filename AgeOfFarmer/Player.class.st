@@ -82,6 +82,14 @@ Player >> numberOfWarriors [
 ]
 
 { #category : #moves }
+Player >> placeAFarmer: anCase [
+	Farmer new position: anCase.
+
+	
+	
+]
+
+{ #category : #moves }
 Player >> placeAnArmy: anCase with: anSize [
 	(Army withArmySize: anSize) position: anCase.
 	numberOfWarriors := numberOfWarriors - anSize.
