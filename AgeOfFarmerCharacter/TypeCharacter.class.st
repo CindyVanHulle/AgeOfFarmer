@@ -21,6 +21,12 @@ TypeCharacter class >> with: anPlayer [
 	self new player: anPlayer.
 ]
 
+{ #category : #initialization }
+TypeCharacter >> initialize [ 
+	super initialize.
+	position := Cases new.
+]
+
 { #category : #creating }
 TypeCharacter >> player: anPlayer [
 	player := anPlayer. 
@@ -33,6 +39,7 @@ TypeCharacter >> position [
 
 { #category : #accessing }
 TypeCharacter >> position: anCase [
+	position characterEnabledOff.
 	anCase characterEnabledOn.
 	position := anCase.
 ]

@@ -8,7 +8,7 @@ Class {
 FarmerTest >> testGetPosition [
 	| farmer |
 	farmer := Farmer new.
-	self assert: farmer position equals: 0@0.
+	self assert: farmer position className equals: #Cases.
 ]
 
 { #category : #tests }

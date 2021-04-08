@@ -8,7 +8,7 @@ Class {
 ArmyTest >> testGetPosition [
 	| army |
 	army := Army new.
-	self assert: army position equals: 0@0.
+	self assert: army position className equals: #Cases.
 ]
 
 { #category : #tests }
