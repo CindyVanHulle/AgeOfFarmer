@@ -63,3 +63,11 @@ CasesTest >> testGetPoints [
 	self assert: p points equals: 1.
 	self assert: w points equals: 2.
 ]
+
+{ #category : #tests }
+CasesTest >> testGetPosition [ 
+	| c |
+	c := Cases new.
+	c position: 4@2.
+	self assert: c position equals: 4@2
+]
