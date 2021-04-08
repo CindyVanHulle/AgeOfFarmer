@@ -6,8 +6,8 @@ Class {
 
 { #category : #tests }
 TypeCharacterTest >> testGetPlayer [
-	| player character |
-	player := Player new.
-	character := TypeCharacter with: player.
-	self assert: character player className equals: #Player.
+	| p character |
+	p := Player new.
+	character := TypeCharacter with: p.
+	self assert: character p className equals: #Player.
 ]
