@@ -102,6 +102,12 @@ Player >> placeAnArmy: anCase with: anSize [
 ]
 
 { #category : #access }
+Player >> playARound [
+	" Player need to play "
+	
+]
+
+{ #category : #access }
 Player >> sandStock [
 	^ sandStock
 ]
