@@ -6,7 +6,8 @@ Class {
 		'armySizeMax',
 		'ressource',
 		'player',
-		'characterEnabled'
+		'characterEnabled',
+		'position'
 	],
 	#category : #AgeOfFarmerCase
 }
@@ -56,6 +57,16 @@ Cases >> player: aPlayer [
 Cases >> points [
 
 	^ points
+]
+
+{ #category : #setter }
+Cases >> position [
+	^ position
+]
+
+{ #category : #setter }
+Cases >> position: aPoint [
+	position := aPoint
 ]
 
 { #category : #acccessing }
