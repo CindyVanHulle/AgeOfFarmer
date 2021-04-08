@@ -129,3 +129,23 @@ PlayerTest >> testMoveCharacter [
 	self assert: character position className equals: #Cases.
 	self assert: case characterEnabled equals: true.
 ]
+
+{ #category : #tests }
+PlayerTest >> testPlaceAnArmyOnACase [
+	| player case |
+	player := Player new.
+	case := Cases new.
+	self assert: case characterEnabled  equals: false.
+	player placeAnArmy: case with: 5.
+	self assert: case characterEnabled  equals: true
+]
+
+{ #category : #tests }
+PlayerTest >> testPlaceAnArmyOnACaseSubtractTheGoodNumberOfWariors [
+	| player case |
+	player := Player new.
+	case := Cases new.
+	self assert: player numberOfWarriors  equals: 35.
+	player placeAnArmy: case with: 5.
+	self assert: player numberOfWarriors  equals: 30
+]
