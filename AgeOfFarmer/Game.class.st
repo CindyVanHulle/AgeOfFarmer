@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #initialization }
+Game >> addPlayers: aPlayer [
+	players add: aPlayer 
+]
+
+{ #category : #initialization }
 Game >> initialize [ 
 	super initialize.
 	players := LinkedList new.
@@ -16,9 +21,4 @@ Game >> initialize [
 { #category : #accessing }
 Game >> players [
 	^ players
-]
-
-{ #category : #initialization }
-Game >> players: aPlayer [
-	players add: aPlayer 
 ]
