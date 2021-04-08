@@ -6,5 +6,6 @@ Class {
 
 { #category : #initialization }
 Sand >> initialize [
+	super initialize.
 	gold := 5.
 ]
