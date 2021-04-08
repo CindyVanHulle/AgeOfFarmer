@@ -136,7 +136,7 @@ PlayerTest >> testPlaceAnArmyOnACase [
 	player := Player new.
 	case := Cases new.
 	self assert: case characterEnabled  equals: false.
-	player placeAnArmy: case with: 5.
+	player placeAFarmer: case.
 	self assert: case characterEnabled  equals: true
 ]
 
@@ -148,4 +148,14 @@ PlayerTest >> testPlaceAnArmyOnACaseSubtractTheGoodNumberOfWariors [
 	self assert: player numberOfWarriors  equals: 35.
 	player placeAnArmy: case with: 5.
 	self assert: player numberOfWarriors  equals: 30
+]
+
+{ #category : #tests }
+PlayerTest >> testPlaceAnFarmerOnACase [
+	| player case |
+	player := Player new.
+	case := Cases new.
+	self assert: case characterEnabled  equals: false.
+	player placeAFarmer: case.
+	self assert: case characterEnabled  equals: true
 ]
