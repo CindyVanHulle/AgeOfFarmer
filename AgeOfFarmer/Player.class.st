@@ -103,7 +103,12 @@ Player >> placeAnArmy: anCase with: anSize [
 
 { #category : #access }
 Player >> playARound [
+
 	" Player need to play "
+	"Pose Army or do nothing"
+	"Recolte ressource of all army"
+	"Nourrissage des armées"
+	
 	
 ]
 
