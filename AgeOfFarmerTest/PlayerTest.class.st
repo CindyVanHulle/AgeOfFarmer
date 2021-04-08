@@ -159,3 +159,14 @@ PlayerTest >> testPlaceAnFarmerOnACase [
 	player placeAFarmer: case.
 	self assert: case characterEnabled  equals: true
 ]
+
+{ #category : #tests }
+PlayerTest >> testPutArmyOnListOfUnits [
+	| player case list size|
+	player := Player new.
+	case := Cases new.
+	player placeAnArmy: case with: 5.
+	list := player listOfUnits.
+	size := list size.
+	self assert: (list at: size) className  equals: #Army.
+]
