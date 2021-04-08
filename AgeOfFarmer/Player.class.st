@@ -103,9 +103,9 @@ Player >> placeAnArmy: anCase with: anSize [
 
 { #category : #access }
 Player >> playARound [
-
+	| action |
 	" Player need to play "
-	"Pose Army or do nothing"
+	action := UIManager default request: 'Army or Farmer or Nothing'.
 	"Recolte ressource of all army"
 	"Nourrissage des armées"
 	
