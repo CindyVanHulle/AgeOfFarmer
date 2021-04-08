@@ -81,6 +81,14 @@ Player >> numberOfWarriors [
 	^ numberOfWarriors.
 ]
 
+{ #category : #'as yet unclassified' }
+Player >> placeAnArmy: anCase with: anSize [
+	(Army withArmySize: anSize) position: anCase.
+	numberOfWarriors := numberOfWarriors - anSize.
+	
+	
+]
+
 { #category : #access }
 Player >> sandStock [
 	^ sandStock
