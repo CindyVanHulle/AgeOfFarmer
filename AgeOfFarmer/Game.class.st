@@ -17,3 +17,8 @@ Game >> initialize [
 Game >> players [
 	^ players
 ]
+
+{ #category : #initialization }
+Game >> players: aPlayer [
+	players add: aPlayer 
+]
