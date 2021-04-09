@@ -24,6 +24,11 @@ Cases >> armySizeMax [
 ]
 
 { #category : #'as yet unclassified' }
+Cases >> character [
+	 ^ character
+]
+
+{ #category : #'as yet unclassified' }
 Cases >> character: anArmy [ 
 	character := anArmy
 ]
