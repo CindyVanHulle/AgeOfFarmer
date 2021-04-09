@@ -172,13 +172,13 @@ Player >> placeAFarmer: anCase [
 ]
 
 { #category : #moves }
-Player >> placeAnArmy: aCase with: anSize [
+Player >> placeAnArmy: aCase with: aSize [
 	| army |
-	army := (Army withArmySize: anSize).
+	army := (Army withArmySize: aSize).
 	army player: self.
 	army position: aCase.
 	aCase character: army.
-	numberOfWarriors := numberOfWarriors - anSize.
+	numberOfWarriors := numberOfWarriors - aSize.
 	listOfUnits add: army .
 	
 	
