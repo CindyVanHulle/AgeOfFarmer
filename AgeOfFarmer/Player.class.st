@@ -252,9 +252,13 @@ Player >> wheatStock [
 
 { #category : #'as yet unclassified' }
 Player >> whoIsOnTheCase: aCase with: aSize [
-	self = (aCase character player) 
+	| character |
+	character := aCase character.
+	character className = #Farmer 
+	ifFalse: [ self = (character  player) 
 		ifTrue: [ self armyAllies: aSize on: aCase ]
-		ifFalse: [ self armyEnemies: aSize against: aCase ]
+		ifFalse: [ self armyEnemies: aSize against: aCase ] ]
+	
 ]
 
 { #category : #access }
