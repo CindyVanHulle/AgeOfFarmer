@@ -7,7 +7,8 @@ Class {
 		'ressource',
 		'player',
 		'characterEnabled',
-		'position'
+		'position',
+		'character'
 	],
 	#category : #AgeOfFarmerCase
 }

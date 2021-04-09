@@ -22,11 +22,34 @@ Player class >> withBoard: aBoard [
 	^ self new board: aBoard 
 ]
 
-{ #category : #access }
+{ #category : #comparing }
+Player >> = anObject [
+
+	"Answer whether the receiver and anObject represent the same object."
+
+	self == anObject ifTrue: [ ^ true ].
+	self class = anObject class ifFalse: [ ^ false ].
+	^ woodStock = anObject woodStock and: [ 
+		  wheatStock = anObject wheatStock and: [ 
+			  unitsOfFoods = anObject unitsOfFoods and: [ 
+				  stoneStock = anObject stoneStock and: [ 
+					  score = anObject score and: [ 
+						  sandStock = anObject sandStock and: [ 
+							  numberOfWarriors = anObject numberOfWarriors and: [ 
+								  numberOfTerritory = anObject numberOfTerritory and: [ 
+									  listOfUnits = anObject listOfUnits and: [ 
+										  goldStock = anObject goldStock ] ] ] ] ] ] ] ] ]
+]
+
+{ #category : #moves }
 Player >> actionArmy [
 	| positionArmy case | 
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
-	positionArmy := ',' split: positionArmy.  
+	positionArmy := ',' split: positionArmy.
+	(board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger characterEnabled ifTrue: [self toDefined]. "SUD" 
+	(board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger  characterEnabled ifTrue: [self toDefined]. "NORD"
+	(board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1  characterEnabled ifTrue: [self toDefined]. "OUEST"
+	(board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1  characterEnabled ifTrue: [self toDefined]. "EST"
 	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
@@ -78,6 +101,20 @@ Player >> goldStock [
 	^ goldStock
 ]
 
+{ #category : #comparing }
+Player >> hash [
+
+	"Answer an integer value that is related to the identity of the receiver."
+
+	^ woodStock hash bitXor:
+		  (wheatStock hash bitXor: (unitsOfFoods hash bitXor:
+				    (stoneStock hash bitXor:
+					     (score hash bitXor: (sandStock hash bitXor:
+							       (numberOfWarriors hash bitXor:
+								        (numberOfTerritory hash bitXor:
+									         (listOfUnits hash bitXor: goldStock hash))))))))
+]
+
 { #category : #initialization }
 Player >> initialize [
 
@@ -126,6 +163,7 @@ Player >> placeAnArmy: anCase with: anSize [
 	| army |
 	army := (Army withArmySize: anSize).
 	army position: anCase.
+	anCase character: army.
 	numberOfWarriors := numberOfWarriors - anSize.
 	listOfUnits add: army .
 	
