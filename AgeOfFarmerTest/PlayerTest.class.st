@@ -50,6 +50,14 @@ PlayerTest >> testAddWoodSotck [
 ]
 
 { #category : #tests }
+PlayerTest >> testGetAndSetBoard [
+	| player board |
+	board := Board new.
+	player := Player withBoard: board.
+	self assert: player board className equals: #Board.
+]
+
+{ #category : #tests }
 PlayerTest >> testGetGoldStock [
 	| player |
 	player := Player new.
