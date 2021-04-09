@@ -23,6 +23,11 @@ Cases >> armySizeMax [
 	^ armySizeMax
 ]
 
+{ #category : #'as yet unclassified' }
+Cases >> character: anArmy [ 
+	character := anArmy
+]
+
 { #category : #acccessing }
 Cases >> characterEnabled [
 	^ characterEnabled
