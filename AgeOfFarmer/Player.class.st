@@ -171,6 +171,7 @@ Player >> placeAFarmer: anCase [
 Player >> placeAnArmy: anCase with: anSize [
 	| army |
 	army := (Army withArmySize: anSize).
+	army player: self.
 	army position: anCase.
 	anCase character: army.
 	numberOfWarriors := numberOfWarriors - anSize.
