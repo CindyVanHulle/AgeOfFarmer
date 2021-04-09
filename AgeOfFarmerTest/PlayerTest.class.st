@@ -144,7 +144,7 @@ PlayerTest >> testPlaceAnArmyOnACase [
 	player := Player new.
 	case := Cases new.
 	self assert: case characterEnabled  equals: false.
-	player placeAFarmer: case.
+	player placeAnArmy: case with: 2 .
 	self assert: case characterEnabled  equals: true
 ]
 

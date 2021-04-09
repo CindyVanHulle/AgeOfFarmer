@@ -43,17 +43,23 @@ Player >> = anObject [
 
 { #category : #moves }
 Player >> actionArmy [
-	| positionArmy case sud nord est ouest| 
+	| positionArmy case explore size | 
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
 	positionArmy := ',' split: positionArmy.
-	sud := ((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger).
-	sud characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "SUD" 
-	nord := ((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger).
-	nord characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "NORD"
-	est := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1).
-	est characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "OUEST"
-	ouest := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1).
-	ouest characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "EST"
+	size := (positionArmy at: 3) asInteger.	
+		
+	explore := ((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger).
+	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "SUD" 
+	
+	explore := ((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger).
+	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "NORD"
+	
+	explore := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1).
+	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "OUEST"
+	
+	explore := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1).
+	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "EST"
+	
 	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
@@ -221,6 +227,13 @@ Player >> unitsOfFoods [
 { #category : #access }
 Player >> wheatStock [
 	^ wheatStock
+]
+
+{ #category : #'as yet unclassified' }
+Player >> whoIsOnTheCase: aCase with: aSize [
+	self = (aCase character player) 
+		ifTrue: [ self armyAllies: aSize ]
+		ifFalse: [ self armyEnemies: aSize ]
 ]
 
 { #category : #access }
