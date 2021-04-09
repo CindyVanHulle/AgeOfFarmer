@@ -47,13 +47,13 @@ Player >> actionArmy [
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
 	positionArmy := ',' split: positionArmy.
 	sud := ((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger).
-	sud characterEnabled ifTrue: [self = sud player ]. "SUD" 
+	sud characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "SUD" 
 	nord := ((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger).
-	nord characterEnabled ifTrue: [self = nord player]. "NORD"
+	nord characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "NORD"
 	est := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1).
-	est characterEnabled ifTrue: [self = est player]. "OUEST"
+	est characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "OUEST"
 	ouest := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1).
-	ouest characterEnabled ifTrue: [self = ouest player]. "EST"
+	ouest characterEnabled ifTrue: [ self whoIsOnTheCase: positionArmy ]. "EST"
 	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
