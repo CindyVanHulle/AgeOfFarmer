@@ -261,7 +261,7 @@ Player >> wheatStock [
 { #category : #'as yet unclassified' }
 Player >> whoIsOnTheCase: aCase with: aSize [
 	self = (aCase character player) 
-		ifTrue: [ self armyAllies: aSize ]
+		ifTrue: [ self armyAllies: aSize on: aCase ]
 		ifFalse: [ self armyEnemies: aSize against: aCase ]
 ]
 
