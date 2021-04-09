@@ -5,8 +5,13 @@ Class {
 }
 
 { #category : #creation }
+PlainCase >> goldGain [
+	^ 2.
+]
+
+{ #category : #creation }
 PlainCase >> harvest [
-	^ Wheat new.
+	^ 5.
 ]
 
 { #category : #initialization }

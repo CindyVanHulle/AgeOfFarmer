@@ -11,8 +11,8 @@ DesertCase >> armySizeMax [
 ]
 
 { #category : #creation }
-DesertCase >> harvest [
-	^ Sand new.
+DesertCase >> goldGain [
+	^ 5.
 ]
 
 { #category : #initialization }

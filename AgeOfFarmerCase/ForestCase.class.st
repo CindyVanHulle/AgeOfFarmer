@@ -5,8 +5,13 @@ Class {
 }
 
 { #category : #creation }
+ForestCase >> goldGain [
+	^ 8
+]
+
+{ #category : #creation }
 ForestCase >> harvest [
-	^ Wood new.
+	^ 1
 ]
 
 { #category : #initialization }

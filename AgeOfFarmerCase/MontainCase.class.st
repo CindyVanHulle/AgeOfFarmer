@@ -16,8 +16,8 @@ MontainCase >> armySizeMax [
 ]
 
 { #category : #creation }
-MontainCase >> harvest [
-	^ Stone new.
+MontainCase >> goldGain [
+	^ 8.
 ]
 
 { #category : #initialization }
