@@ -236,14 +236,14 @@ Player >> placeAnArmy: aCase with: aSize [
 
 { #category : #access }
 Player >> playARound [
-	| action food harvested|
+	| action |
 	" Player need to play "
+	self goldGain.
+	self harvest.
 	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
 	action = 'Farmer' ifTrue: [ self actionFarmer ].
 	"Recolte ressource of all army"
-	food := self unitsOfFoods - self Army costFood.
-	harvested := self Farmer harvest.
 	"Nourrissage des armées"
 	
 	
