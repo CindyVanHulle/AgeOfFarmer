@@ -112,7 +112,7 @@ Player >> armyAllies: aSize on: aCase [
 	| character |
 	character := (aCase character).
 	aSize < character size ifTrue: 
-	[ character size: character size + 1  ]
+	[ character size <5 ifTrue: [character size + 1  ]]
 	 ifFalse: [ "Nothing" ]
 	
 	
