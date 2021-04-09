@@ -142,8 +142,25 @@ Player >> board: aBoard [
 ]
 
 { #category : #access }
+Player >> goldGain [
+	listOfUnits do: [ :each | self addGold: each position goldGain ].
+
+	
+	
+]
+
+{ #category : #access }
 Player >> goldStock [
 	^ goldStock
+]
+
+{ #category : #access }
+Player >> harvest [
+	listOfUnits do: [ :each | each className = #Army  ifTrue: 
+		[self removeUnitsOfFood: each costFood]
+	ifFalse: [self addUnitsOfFood: each position harvest ]].
+	
+	
 ]
 
 { #category : #comparing }
@@ -221,6 +238,10 @@ Player >> placeAnArmy: aCase with: aSize [
 Player >> playARound [
 	| action |
 	" Player need to play "
+	self goldGain.
+	self harvest.
+	Transcript show: 'la recolte c''est faite '; cr.
+	Transcript show: 'stock d''or : ' , goldStock asString,' le stock de nourriture : ', unitsOfFoods asString , ' tu as : ' , numberOfWarriors asString ,' guerriers ', ' tu as : ' , numberOfTerritory asString , ' territoires' ;cr.
 	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
 	action = 'Farmer' ifTrue: [ self actionFarmer ].
