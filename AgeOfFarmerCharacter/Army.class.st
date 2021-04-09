@@ -50,5 +50,6 @@ Army >> size [
 
 { #category : #access }
 Army >> size: anInteger [ 
+	anInteger > 5 ifTrue: [ size := 5 ].
 	size := anInteger
 ]

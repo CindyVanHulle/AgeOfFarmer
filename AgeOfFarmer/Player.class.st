@@ -54,6 +54,15 @@ Player >> actionArmy [
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
 
+{ #category : #access }
+Player >> actionFarmer [
+	| positionFarmer case | 
+	positionFarmer := self askSomethingToPlayer: 'position x,y'.
+	positionFarmer := ',' split: positionFarmer.  
+	case := (board at: (positionFarmer at:1) asInteger) at: (positionFarmer at:2) asInteger.
+	self placeAFarmer: case.
+]
+
 { #category : #adding }
 Player >> addGold: anQuantity [
 	goldStock := goldStock + anQuantity.
@@ -176,7 +185,8 @@ Player >> playARound [
 	| action |
 	" Player need to play "
 	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
-	action = 'Army' ifTrue: [ self actionArmy]
+	action = 'Army' ifTrue: [ self actionArmy].
+	action = 'Farmer' ifTrue: [ self actionFarmer ].
 	"Recolte ressource of all army"
 	"Nourrissage des armées"
 	
