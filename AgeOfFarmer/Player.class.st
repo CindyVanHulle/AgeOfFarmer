@@ -47,9 +47,9 @@ Player >> actionArmy [
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
 	positionArmy := ',' split: positionArmy.
 	((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger) characterEnabled ifTrue: [self toDefined]. "SUD" 
-	((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger)  characterEnabled ifTrue: [self toDefined]. "NORD"
-	((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1)  characterEnabled ifTrue: [self toDefined]. "OUEST"
-	((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1)  characterEnabled ifTrue: [self toDefined]. "EST"
+	((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger) characterEnabled ifTrue: [self toDefined]. "NORD"
+	((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1) characterEnabled ifTrue: [self toDefined]. "OUEST"
+	((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1) characterEnabled ifTrue: [self toDefined]. "EST"
 	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
