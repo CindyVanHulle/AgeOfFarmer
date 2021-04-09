@@ -20,9 +20,9 @@ Game >> initialize [
 
 { #category : #playing }
 Game >> playGame: aNumberOfPlayer [
-	1 to: aNumberOfPlayer do: [ self addPlayers: Player new. ].
+	1 to: aNumberOfPlayer do: [ :each| self addPlayers: Player new ].
 	1 to: 10 do: 
-		[ self players do: 
+		[ :each | self players do: 
 			[ :player | player playARound ] ].
 	self whoIsTheWinner.
 ]

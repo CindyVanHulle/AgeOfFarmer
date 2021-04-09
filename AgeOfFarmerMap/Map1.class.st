@@ -5,15 +5,7 @@ Class {
 }
 
 { #category : #creation }
-Map1 >> OceanMap [
-	| board cell |
-	board :=Array2D rows: 6 columns: 7.
-	cell := board indicesCollect: [ :i :j | self newOceanCellAt: i at: j  ].
-	^ cell
-]
-
-{ #category : #creation }
-Map1 >> createMap1 [
+Map1 class >> createMap1 [
 	| board line |
 	board := Array new: 6.
 	line := Array  withAll: { OceanCases new . OceanCases new . OceanCases new . OceanCases new . OceanCases new . OceanCases new . OceanCases new }.
@@ -25,6 +17,14 @@ Map1 >> createMap1 [
 	at: 4 put: line;
 	at: 5 put: line.
 	^ board
+]
+
+{ #category : #creation }
+Map1 >> OceanMap [
+	| board cell |
+	board :=Array2D rows: 6 columns: 7.
+	cell := board indicesCollect: [ :i :j | self newOceanCellAt: i at: j  ].
+	^ cell
 ]
 
 { #category : #creation }
