@@ -240,6 +240,8 @@ Player >> playARound [
 	" Player need to play "
 	self goldGain.
 	self harvest.
+	Transcript show: 'la recolte c''est faite '; cr.
+	Transcript show: 'stock d''or : ' , goldStock asString,' le stock de nourriture : ', unitsOfFoods asString , ' tu as : ' , numberOfWarriors asString ,' guerriers ', ' tu as : ' , numberOfTerritory asString , ' territoires' ;cr.
 	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
 	action = 'Farmer' ifTrue: [ self actionFarmer ].
