@@ -230,6 +230,11 @@ Player >> playARound [
 	
 ]
 
+{ #category : #adding }
+Player >> removeUnitsOfFood: anInteger [
+	unitsOfFoods := unitsOfFoods - anInteger 
+]
+
 { #category : #access }
 Player >> sandStock [
 	^ sandStock
