@@ -28,8 +28,8 @@ TypeCharacter >> player [
 ]
 
 { #category : #creating }
-TypeCharacter >> player: anPlayer [
-	player := anPlayer. 
+TypeCharacter >> player: aPlayer [
+	player := aPlayer. 
 ]
 
 { #category : #accessing }
@@ -38,8 +38,8 @@ TypeCharacter >> position [
 ]
 
 { #category : #accessing }
-TypeCharacter >> position: anCase [
+TypeCharacter >> position: aCase [
 	position characterEnabledOff.
-	anCase characterEnabledOn.
-	position := anCase.
+	aCase characterEnabledOn.
+	position := aCase.
 ]
