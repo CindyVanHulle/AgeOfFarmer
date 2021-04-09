@@ -89,6 +89,11 @@ Player >> addStone: aQuantity [
 ]
 
 { #category : #adding }
+Player >> addUnitsOfFood: anInteger [
+	unitsOfFoods := unitsOfFoods + anInteger 
+]
+
+{ #category : #adding }
 Player >> addWheat: aQuantity [
 	wheatStock := wheatStock + aQuantity.
 ]
