@@ -68,28 +68,28 @@ Player >> actionFarmer [
 ]
 
 { #category : #adding }
-Player >> addGold: anQuantity [
-	goldStock := goldStock + anQuantity.
+Player >> addGold: aQuantity [
+	goldStock := goldStock + aQuantity.
 ]
 
 { #category : #adding }
-Player >> addSand: anQuantity [
-	sandStock := sandStock + anQuantity.
+Player >> addSand: aQuantity [
+	sandStock := sandStock + aQuantity.
 ]
 
 { #category : #adding }
-Player >> addStone: anQuantity [ 
-	stoneStock := stoneStock + anQuantity.
+Player >> addStone: aQuantity [ 
+	stoneStock := stoneStock + aQuantity.
 ]
 
 { #category : #adding }
-Player >> addWheat: anQuantity [
-	wheatStock := wheatStock + anQuantity.
+Player >> addWheat: aQuantity [
+	wheatStock := wheatStock + aQuantity.
 ]
 
 { #category : #adding }
-Player >> addWood: anQuantity [ 
-	woodStock := woodStock + anQuantity.
+Player >> addWood: aQuantity [ 
+	woodStock := woodStock + aQuantity.
 ]
 
 { #category : #access }
@@ -164,8 +164,8 @@ Player >> numberOfWarriors [
 ]
 
 { #category : #moves }
-Player >> placeAFarmer: anCase [
-	Farmer new position: anCase.
+Player >> placeAFarmer: aCase [
+	Farmer new position: aCase.
 
 	
 	
