@@ -144,7 +144,12 @@ Player >> board: aBoard [
 
 { #category : #access }
 Player >> displayARound [
-	board do: [ :each | each do: [ :case | Transcript show: case ]. Transcript show: '';cr].
+
+	board do: [ :each | 
+		each do: [ :case | Transcript show: case ].
+		Transcript
+			show: '';
+			cr ]
 ]
 
 { #category : #access }
