@@ -98,6 +98,26 @@ Player >> addWood: aQuantity [
 	woodStock := woodStock + aQuantity.
 ]
 
+{ #category : #moves }
+Player >> armyAllies: aSize [
+	"Allons boire un petit coup et faisons la fete"
+	
+	
+]
+
+{ #category : #moves }
+Player >> armyAllies: aSize on: aCase [
+	"Allons boire un petit coup et faisons la fete"
+	"size taille de l'armee que tu viens de placer"
+	| character |
+	character := (aCase character).
+	aSize < character size ifTrue: 
+	[ character size <5 ifTrue: [character size + 1  ]]
+	 ifFalse: [ "Nothing" ]
+	
+	
+]
+
 { #category : #'as yet unclassified' }
 Player >> armyEnemies: aSize against: aCase [
 	| enemies |
