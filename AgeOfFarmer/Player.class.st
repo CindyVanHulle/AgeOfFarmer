@@ -98,6 +98,15 @@ Player >> addWood: aQuantity [
 	woodStock := woodStock + aQuantity.
 ]
 
+{ #category : #'as yet unclassified' }
+Player >> armyEnemies: aSize against: aCase [
+	| enemies |
+	enemies := aCase character.
+	enemies armySize < 1 ifTrue: [ enemies player: self. enemies size: 1 ].
+	enemies armySize < aSize ifTrue: [ enemies size: (enemies size / 2) ].
+
+]
+
 { #category : #access }
 Player >> askSomethingToPlayer: aStream [
 	| action |
@@ -233,7 +242,7 @@ Player >> wheatStock [
 Player >> whoIsOnTheCase: aCase with: aSize [
 	self = (aCase character player) 
 		ifTrue: [ self armyAllies: aSize ]
-		ifFalse: [ self armyEnemies: aSize ]
+		ifFalse: [ self armyEnemies: aSize against: aCase ]
 ]
 
 { #category : #access }
