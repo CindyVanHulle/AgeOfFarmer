@@ -32,3 +32,9 @@ Board >> initialize [
 	super initialize .
 	board := Array new.
 ]
+
+{ #category : #acccessing }
+Board >> setBoard [
+	board := Map1 createMap1.
+	
+]

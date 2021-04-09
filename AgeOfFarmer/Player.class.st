@@ -12,7 +12,8 @@ Class {
 		'numberOfTerritory',
 		'score',
 		'listOfUnits',
-		'board'
+		'board',
+		'cr'
 	],
 	#category : #AgeOfFarmer
 }
@@ -48,7 +49,7 @@ Player >> actionArmy [
 	positionArmy := ',' split: positionArmy.
 	size := (positionArmy at: 3) asInteger.	
 		
-	explore := ((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger).
+	explore := ((board at: (((positionArmy at:1) asInteger - 1) max: 1)) at: (positionArmy at:2) asInteger).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "SUD" 
 	
 	explore := ((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger).
@@ -57,7 +58,7 @@ Player >> actionArmy [
 	explore := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "OUEST"
 	
-	explore := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1).
+	explore := ((board at: (positionArmy at:1) asInteger) at: (((positionArmy at:2) asInteger - 1)max: 1)).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "EST"
 	
 	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
@@ -139,6 +140,11 @@ Player >> board [
 { #category : #creating }
 Player >> board: aBoard [ 
 	board := aBoard
+]
+
+{ #category : #access }
+Player >> displayARound [
+	board do: [ :each | each do: [ :case | Transcript show: case ]. Transcript show: '';cr].
 ]
 
 { #category : #access }
@@ -242,6 +248,7 @@ Player >> playARound [
 	self harvest.
 	Transcript show: 'la recolte c''est faite '; cr.
 	Transcript show: 'stock d''or : ' , goldStock asString,' le stock de nourriture : ', unitsOfFoods asString , ' tu as : ' , numberOfWarriors asString ,' guerriers ', ' tu as : ' , numberOfTerritory asString , ' territoires' ;cr.
+	self displayARound .
 	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
 	action = 'Farmer' ifTrue: [ self actionFarmer ].
