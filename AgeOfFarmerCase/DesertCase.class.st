@@ -15,6 +15,11 @@ DesertCase >> goldGain [
 	^ 5.
 ]
 
+{ #category : #creation }
+DesertCase >> harvest [
+	^ 0
+]
+
 { #category : #initialization }
 DesertCase >> initialize [
 	super initialize .

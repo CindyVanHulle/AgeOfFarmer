@@ -20,6 +20,11 @@ MontainCase >> goldGain [
 	^ 8.
 ]
 
+{ #category : #creation }
+MontainCase >> harvest [
+	^ 0
+]
+
 { #category : #initialization }
 MontainCase >> initialize [
 	super initialize .
