@@ -43,13 +43,17 @@ Player >> = anObject [
 
 { #category : #moves }
 Player >> actionArmy [
-	| positionArmy case | 
+	| positionArmy case sud nord est ouest| 
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
 	positionArmy := ',' split: positionArmy.
-	((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger) characterEnabled ifTrue: [self toDefined]. "SUD" 
-	((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger)  characterEnabled ifTrue: [self toDefined]. "NORD"
-	((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1)  characterEnabled ifTrue: [self toDefined]. "OUEST"
-	((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1)  characterEnabled ifTrue: [self toDefined]. "EST"
+	sud := ((board at: (positionArmy at:1) asInteger - 1) at: (positionArmy at:2) asInteger).
+	sud characterEnabled ifTrue: [self = sud player ]. "SUD" 
+	nord := ((board at: (positionArmy at:1) asInteger + 1) at: (positionArmy at:2) asInteger).
+	nord characterEnabled ifTrue: [self = nord player]. "NORD"
+	est := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger + 1).
+	est characterEnabled ifTrue: [self = est player]. "OUEST"
+	ouest := ((board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger - 1).
+	ouest characterEnabled ifTrue: [self = ouest player]. "EST"
 	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
