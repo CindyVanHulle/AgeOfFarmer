@@ -22,5 +22,5 @@ MontainCasesTest >> testGetPoints [
 MontainCasesTest >> testHarvest [ 
 	| montain |
 	montain := MontainCase new.
-	self assert: montain goldGain className equals: #Stone
+	self assert: montain goldGain equals: 8
 ]
