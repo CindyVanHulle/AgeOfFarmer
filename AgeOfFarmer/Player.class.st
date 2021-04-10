@@ -313,7 +313,7 @@ Player >> whoIsOnTheCase: aCase with: aSize [
 	| character |
 	character := aCase character.
 	character className = #Farmer 
-	ifFalse: [ self = (character  player) 
+	ifFalse: [ self = (character player) 
 		ifTrue: [ self armyAllies: aSize on: aCase ]
 		ifFalse: [ self armyEnemies: aSize against: aCase ] ]
 	
