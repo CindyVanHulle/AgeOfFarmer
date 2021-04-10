@@ -110,7 +110,7 @@ Player >> armyAllies: aSize on: aCase [
 	"size taille de l'armee que tu viens de placer"
 	| character |
 	character := (aCase character).
-	aSize < character size & character size < 5 size ifTrue: 
+	aSize < character size & character size < 5 ifTrue: 
 	[ character size + 1  ]
 	
 	
