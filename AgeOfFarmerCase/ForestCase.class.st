@@ -22,5 +22,5 @@ ForestCase >> initialize [
 
 { #category : #initialization }
 ForestCase >> printOn: aStream [
-	aStream nextPutAll: 'F'.
+	aStream nextPutAll: ' F '.
 ]

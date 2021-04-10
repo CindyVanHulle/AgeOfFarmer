@@ -22,5 +22,5 @@ PlainCase >> initialize [
 
 { #category : #initialization }
 PlainCase >> printOn: aStream [
-	aStream nextPutAll: 'P'.
+	aStream nextPutAll: ' P '.
 ]

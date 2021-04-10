@@ -82,7 +82,7 @@ Cases >> position: aPoint [
 
 { #category : #acccessing }
 Cases >> printOn: aStream [
-	aStream nextPutAll: 'O'.
+	aStream nextPutAll: ' O '.
 ]
 
 { #category : #access }

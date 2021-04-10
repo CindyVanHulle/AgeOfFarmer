@@ -34,5 +34,5 @@ MontainCase >> initialize [
 
 { #category : #initialization }
 MontainCase >> printOn: aStream [
-	aStream nextPutAll: 'M'.
+	aStream nextPutAll: ' M '.
 ]

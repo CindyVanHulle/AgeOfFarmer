@@ -29,5 +29,5 @@ DesertCase >> initialize [
 
 { #category : #initialization }
 DesertCase >> printOn: aStream [
-	aStream nextPutAll: 'D'.
+	aStream nextPutAll: ' D '.
 ]
