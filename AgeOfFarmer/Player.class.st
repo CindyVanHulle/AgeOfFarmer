@@ -163,7 +163,7 @@ Player >> displayLine: aLine [
 Player >> goldGain [
 	listOfUnits do: [ :each | each className = #Army ifTrue: 
 		[ self addGold: each position goldGain ] 
-	ifFalse: [ self addGold: each position costGold ]].
+	ifFalse: [ goldStock <= 0 ifTrue: [ listOfUnits remove: each ] ifFalse: [ self addGold: each position costGold ]]].
 
 	
 	
@@ -177,7 +177,7 @@ Player >> goldStock [
 { #category : #access }
 Player >> harvest [
 	listOfUnits do: [ :each | each className = #Army  ifTrue: 
-		[self removeUnitsOfFood: each costFood]
+		[unitsOfFoods <= 0 ifTrue: [ listOfUnits remove: each ] ifFalse: [ self removeUnitsOfFood: each costFood ] ]
 	ifFalse: [self addUnitsOfFood: each position harvest ]].
 	
 	
@@ -266,8 +266,8 @@ Player >> placeAnArmy: aCase with: aSize [
 Player >> playARound [
 	| action |
 	action := 'Army'.
-	self goldGain.
 	self harvest.
+	self goldGain.	
 	Transcript show: 'la recolte c''est faite '; cr.
 	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
 	self displayABoard .
