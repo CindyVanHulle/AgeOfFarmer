@@ -5,6 +5,13 @@ Class {
 }
 
 { #category : #tests }
+ForestCasesTest >> testCostGold [ 
+	| forest |
+	forest := ForestCase new.
+	self assert: forest costGold equals: -1
+]
+
+{ #category : #tests }
 ForestCasesTest >> testGetArmySizeMax [
 	| w |
 	w := ForestCase new.

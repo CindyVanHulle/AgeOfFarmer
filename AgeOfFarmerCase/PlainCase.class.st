@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #creation }
+PlainCase >> costGold [
+	^ -1.
+]
+
+{ #category : #creation }
 PlainCase >> goldGain [
 	^ 2.
 ]

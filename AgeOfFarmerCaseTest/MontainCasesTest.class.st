@@ -5,6 +5,13 @@ Class {
 }
 
 { #category : #tests }
+MontainCasesTest >> testCostGold [ 
+	| montain |
+	montain := MontainCase new.
+	self assert: montain costGold equals: -5
+]
+
+{ #category : #tests }
 MontainCasesTest >> testGetArmySizeMax [
 	| m |
 	m := MontainCase new.

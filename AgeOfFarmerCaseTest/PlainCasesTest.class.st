@@ -5,6 +5,13 @@ Class {
 }
 
 { #category : #tests }
+PlainCasesTest >> testCostGold [
+	| plain |
+	plain := PlainCase new.
+	self assert: plain costGold equals: -1
+]
+
+{ #category : #tests }
 PlainCasesTest >> testGetArmySizeMax [
 	| p |
 	p := PlainCase new.

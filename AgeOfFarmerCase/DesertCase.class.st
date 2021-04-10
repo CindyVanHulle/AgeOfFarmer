@@ -11,6 +11,11 @@ DesertCase >> armySizeMax [
 ]
 
 { #category : #creation }
+DesertCase >> costGold [
+	^ -3.
+]
+
+{ #category : #creation }
 DesertCase >> goldGain [
 	^ 5.
 ]

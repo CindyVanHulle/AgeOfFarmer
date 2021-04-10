@@ -16,6 +16,11 @@ MontainCase >> armySizeMax [
 ]
 
 { #category : #creation }
+MontainCase >> costGold [
+	^ -5.
+]
+
+{ #category : #creation }
 MontainCase >> goldGain [
 	^ 8.
 ]

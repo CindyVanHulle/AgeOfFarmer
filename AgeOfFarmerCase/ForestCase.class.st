@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #creation }
+ForestCase >> costGold [
+	^ -1.
+]
+
+{ #category : #creation }
 ForestCase >> goldGain [
 	^ 8
 ]

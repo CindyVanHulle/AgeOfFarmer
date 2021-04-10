@@ -161,7 +161,9 @@ Player >> displayLine: aLine [
 
 { #category : #access }
 Player >> goldGain [
-	listOfUnits do: [ :each | self addGold: each position goldGain ].
+	listOfUnits do: [ :each | each className = #Army ifTrue: 
+		[ self addGold: each position goldGain ] 
+	ifFalse: [ self addGold: each position costGold ]].
 
 	
 	
@@ -232,8 +234,9 @@ Player >> numberOfWarriors [
 
 { #category : #moves }
 Player >> placeAFarmer: aCase [
-
-	Farmer new position: aCase.
+	| farmer |
+	farmer := Farmer new position: aCase.
+	listOfUnits add: farmer .
 	Transcript show: 'Your farmer placed';cr.
 	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
 	
@@ -276,6 +279,11 @@ Player >> playARound [
 
 	
 	
+]
+
+{ #category : #adding }
+Player >> removeGold: anInteger [
+	goldStock  := goldStock - anInteger 
 ]
 
 { #category : #adding }
