@@ -249,6 +249,7 @@ Player >> placeAnArmy: aCase with: aSize [
 	army position: aCase.
 	aCase character: army.
 	numberOfWarriors := numberOfWarriors - aSize.
+	numberOfTerritory := numberOfTerritory + 1.
 	listOfUnits add: army .
 	Transcript show: 'Your army placed';cr.
 	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
