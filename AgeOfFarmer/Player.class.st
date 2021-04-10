@@ -246,6 +246,7 @@ Player >> placeAnArmy: aCase with: aSize [
 	army position: aCase.
 	aCase character: army.
 	numberOfWarriors := numberOfWarriors - aSize.
+	numberOfTerritory := numberOfTerritory + 1.
 	listOfUnits add: army .
 	
 	
