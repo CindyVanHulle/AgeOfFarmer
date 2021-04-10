@@ -233,6 +233,9 @@ Player >> numberOfWarriors [
 { #category : #moves }
 Player >> placeAFarmer: aCase [
 	Farmer new position: aCase.
+	Transcript show: 'Your farmer placed';cr.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
+	
 
 	
 	
@@ -248,6 +251,8 @@ Player >> placeAnArmy: aCase with: aSize [
 	numberOfWarriors := numberOfWarriors - aSize.
 	numberOfTerritory := numberOfTerritory + 1.
 	listOfUnits add: army .
+	Transcript show: 'Your army placed';cr.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
 	
 	
 	
@@ -256,15 +261,17 @@ Player >> placeAnArmy: aCase with: aSize [
 { #category : #access }
 Player >> playARound [
 	| action |
-	" Player need to play "
+	action := 'Army'.
 	self goldGain.
 	self harvest.
 	Transcript show: 'la recolte c''est faite '; cr.
 	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
 	self displayABoard .
-	action := self askSomethingToPlayer: 'Choose between Army,Farmer or Nothing'.
+	[action = 'Army' or: action = 'Farmer' ] whileTrue: [ 
+	action:= self askSomethingToPlayer: 'Choose between Army,Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
-	action = 'Farmer' ifTrue: [ self actionFarmer ].
+	action = 'Farmer' ifTrue: [ self actionFarmer ]. ]
+	
 
 	
 	

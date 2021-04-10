@@ -39,7 +39,9 @@ TypeCharacter >> position [
 
 { #category : #accessing }
 TypeCharacter >> position: aCase [
-	position characterEnabledOff.
+	aCase className = #OceanCases ifTrue: [ Transcript show: 'your unit risk to drown';cr;cr ]
+	ifFalse: [ position characterEnabledOff.
 	aCase characterEnabledOn.
-	position := aCase.
+	position := aCase. ]
+	
 ]
