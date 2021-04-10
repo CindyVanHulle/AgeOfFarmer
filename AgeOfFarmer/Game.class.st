@@ -25,8 +25,8 @@ Game >> playGame: aNumberOfPlayer [
 	board setBoard .
 	1 to: aNumberOfPlayer do: [ :each | self addPlayers: (Player new board: Map1 createMap1)].
 	1 to: 10 do: 
-		[ :each | self players do: 
-			[ :player | player playARound ] ].
+		[ :each | self players doWithIndex: 
+			[ :player :i | Transcript show: 'Player ', i asString;cr. player playARound ] ].
 	self whoIsTheWinner.
 ]
 

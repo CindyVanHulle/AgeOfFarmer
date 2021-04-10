@@ -9,5 +9,5 @@ Class {
 
 { #category : #'code-critics' }
 ManifestAgeOfFarmer class >> ruleCodeCruftLeftInMethodsRuleV1FalsePositive [
-	^ #(#(#(#RGMethodDefinition #(#Player #displayARound #false)) #'2021-04-09T17:54:55.020599+02:00') )
+	^ #(#(#(#RGMethodDefinition #(#Player #displayABoard #false)) #'2021-04-09T17:54:55.020599+02:00') )
 ]

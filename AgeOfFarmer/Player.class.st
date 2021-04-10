@@ -143,13 +143,14 @@ Player >> board: aBoard [
 ]
 
 { #category : #access }
-Player >> displayARound [
+Player >> displayABoard [
 
 	board do: [ :each | 
 		each do: [ :case | Transcript show: case ].
 		Transcript
 			show: '';
-			cr ]
+			cr ].
+	Transcript show: ' ';cr.
 ]
 
 { #category : #access }
@@ -258,13 +259,12 @@ Player >> playARound [
 	self goldGain.
 	self harvest.
 	Transcript show: 'la recolte c''est faite '; cr.
-	Transcript show: 'stock d''or : ' , goldStock asString,' le stock de nourriture : ', unitsOfFoods asString , ' tu as : ' , numberOfWarriors asString ,' guerriers ', ' tu as : ' , numberOfTerritory asString , ' territoires' ;cr.
-	self displayARound .
-	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
+	self displayABoard .
+	action := self askSomethingToPlayer: 'Choose between Army,Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
 	action = 'Farmer' ifTrue: [ self actionFarmer ].
-	"Recolte ressource of all army"
-	"Nourrissage des armées"
+
 	
 	
 ]
