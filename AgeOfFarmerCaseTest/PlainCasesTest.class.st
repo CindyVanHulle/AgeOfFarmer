@@ -22,5 +22,5 @@ PlainCasesTest >> testGetPoints [
 PlainCasesTest >> testHarvest [ 
 	| plain |
 	plain := PlainCase new.
-	self assert: plain goldGain className equals: #Wheat
+	self assert: plain goldGain equals: 2
 ]

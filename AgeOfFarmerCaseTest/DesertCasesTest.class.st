@@ -22,5 +22,5 @@ DesertCasesTest >> testGetPoints [
 DesertCasesTest >> testHarvest [
 	| desert |
 	desert := DesertCase new.
-	self assert: desert goldGain className equals: #Sand
+	self assert: desert goldGain equals: 5
 ]
