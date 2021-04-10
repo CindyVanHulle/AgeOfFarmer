@@ -232,6 +232,7 @@ Player >> numberOfWarriors [
 
 { #category : #moves }
 Player >> placeAFarmer: aCase [
+
 	Farmer new position: aCase.
 	Transcript show: 'Your farmer placed';cr.
 	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.

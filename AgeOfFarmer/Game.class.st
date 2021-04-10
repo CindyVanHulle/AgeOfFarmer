@@ -27,7 +27,7 @@ Game >> playGame: aNumberOfPlayer [
 	1 to: 10 do: 
 		[ :each | self players doWithIndex: 
 			[ :player :i | Transcript show: 'Player ', i asString;cr. player playARound ] ].
-	self whoIsTheWinner.
+	Transcript show: 'Player ',self whoIsTheWinner asString,' win !!!!';cr.
 ]
 
 { #category : #accessing }
@@ -39,7 +39,7 @@ Game >> players [
 Game >> whoIsTheWinner [
 	| scores |
 	scores := LinkedList new.
-	players do: [ :player | scores add: player gold ].
-	scores doWithIndex: [:e :i | e = scores max ifTrue: [ ^ players at: i ] ]
+	self players do: [ :player | scores add: player goldStock ].
+	scores doWithIndex: [:e :i | e = scores max ifTrue: [ ^ i ] ]
 	
 ]
