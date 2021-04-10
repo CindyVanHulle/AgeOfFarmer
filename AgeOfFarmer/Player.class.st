@@ -48,7 +48,10 @@ Player >> actionArmy [
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
 	positionArmy := ',' split: positionArmy.
 	size := (positionArmy at: 3) asInteger.	
-		
+	
+	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
+	case characterEnabled ifTrue: [ Transcript show: 'la case est déjà occupé petit malin';cr ] ifFalse: [ 
+	
 	explore := ((board at: (((positionArmy at:1) asInteger - 1) max: 1)) at: (positionArmy at:2) asInteger).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "SUD" 
 	
@@ -61,8 +64,9 @@ Player >> actionArmy [
 	explore := ((board at: (positionArmy at:1) asInteger) at: (((positionArmy at:2) asInteger - 1)max: 1)).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "EST"
 	
-	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
+	
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
+	].
 ]
 
 { #category : #access }
@@ -71,7 +75,10 @@ Player >> actionFarmer [
 	positionFarmer := self askSomethingToPlayer: 'position x,y'.
 	positionFarmer := ',' split: positionFarmer.  
 	case := (board at: (positionFarmer at:1) asInteger) at: (positionFarmer at:2) asInteger.
+	case characterEnabled ifTrue: 
+	[ Transcript show: 'la case est deja occupée petit malin'; cr ] ifFalse: [ 
 	self placeAFarmer: case.
+	]
 ]
 
 { #category : #adding }
