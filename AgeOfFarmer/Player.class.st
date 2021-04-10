@@ -235,10 +235,11 @@ Player >> numberOfWarriors [
 { #category : #moves }
 Player >> placeAFarmer: aCase [
 	| farmer |
-	farmer := Farmer new position: aCase.
+	aCase className = #OceanCases ifTrue: [  ] ifFalse: [ farmer := Farmer new position: aCase.
 	listOfUnits add: farmer .
 	Transcript show: 'Your farmer placed';cr.
-	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr. ]
+	
 	
 
 	
@@ -248,7 +249,7 @@ Player >> placeAFarmer: aCase [
 { #category : #moves }
 Player >> placeAnArmy: aCase with: aSize [
 	| army |
-	army := (Army withArmySize: aSize).
+	aCase className = #OceanCases ifTrue: [ Transcript show: 'your unit risk to drown';cr;cr ] ifFalse: [ army := (Army withArmySize: aSize).
 	army player: self.
 	army position: aCase.
 	aCase character: army.
@@ -256,7 +257,8 @@ Player >> placeAnArmy: aCase with: aSize [
 	numberOfTerritory := numberOfTerritory + 1.
 	listOfUnits add: army .
 	Transcript show: 'Your army placed ';cr.
-	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr. ]
+	
 	
 	
 	
