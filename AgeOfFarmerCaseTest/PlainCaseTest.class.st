@@ -1,32 +1,32 @@
 Class {
-	#name : #PlainCasesTest,
+	#name : #PlainCaseTest,
 	#superclass : #TestCase,
 	#category : #AgeOfFarmerCaseTest
 }
 
 { #category : #tests }
-PlainCasesTest >> testCostGold [
+PlainCaseTest >> testCostGold [
 	| plain |
 	plain := PlainCase new.
 	self assert: plain costGold equals: -1
 ]
 
 { #category : #tests }
-PlainCasesTest >> testGetArmySizeMax [
+PlainCaseTest >> testGetArmySizeMax [
 	| p |
 	p := PlainCase new.
 	self assert: p armySizeMax equals: 5.
 ]
 
 { #category : #tests }
-PlainCasesTest >> testGetPoints [
+PlainCaseTest >> testGetPoints [
 	| p |
 	p := PlainCase new.
 	self assert: p points equals: 1.
 ]
 
 { #category : #tests }
-PlainCasesTest >> testHarvest [ 
+PlainCaseTest >> testHarvest [ 
 	| plain |
 	plain := PlainCase new.
 	self assert: plain goldGain equals: 2

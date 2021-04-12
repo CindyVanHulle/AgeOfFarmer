@@ -8,10 +8,10 @@ Class {
 Map1 class >> createMap1 [
 	| board line |
 	board := Array new: 6.
-	line := Array  withAll: { OceanCases new . OceanCases new . OceanCases new . OceanCases new . OceanCases new . OceanCases new . OceanCases new }.
+	line := Array  withAll: { OceanCase new . OceanCase new . OceanCase new . OceanCase new . OceanCase new . OceanCase new . OceanCase new }.
 	board at: 1 put: line;
 	at: 6 put: line.
-	line := Array  withAll: { OceanCases new . PlainCase  new . MontainCase new .  DesertCase  new . ForestCase  new . PlainCase  new . OceanCases new }.
+	line := Array  withAll: { OceanCase new . PlainCase  new . MontainCase new .  DesertCase  new . ForestCase  new . PlainCase  new . OceanCase new }.
 	board at: 2 put: line;
 	at: 3 put: line;
 	at: 4 put: line;
@@ -60,7 +60,7 @@ Map1 >> newMontainCellAt: x at: y [
 { #category : #creation }
 Map1 >> newOceanCellAt: x at: y [
 	| c |
-	c := OceanCases new.
+	c := OceanCase new.
 	c position: x @ y.
 	^ c
 ]

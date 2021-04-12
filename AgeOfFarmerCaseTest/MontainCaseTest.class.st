@@ -1,32 +1,32 @@
 Class {
-	#name : #MontainCasesTest,
+	#name : #MontainCaseTest,
 	#superclass : #TestCase,
 	#category : #AgeOfFarmerCaseTest
 }
 
 { #category : #tests }
-MontainCasesTest >> testCostGold [ 
+MontainCaseTest >> testCostGold [ 
 	| montain |
 	montain := MontainCase new.
 	self assert: montain costGold equals: -5
 ]
 
 { #category : #tests }
-MontainCasesTest >> testGetArmySizeMax [
+MontainCaseTest >> testGetArmySizeMax [
 	| m |
 	m := MontainCase new.
 	self assert: m armySizeMax  equals: 3.
 ]
 
 { #category : #tests }
-MontainCasesTest >> testGetPoints [
+MontainCaseTest >> testGetPoints [
 	| m |
 	m := MontainCase new.
 	self assert: m points  equals: 4.
 ]
 
 { #category : #tests }
-MontainCasesTest >> testHarvest [ 
+MontainCaseTest >> testHarvest [ 
 	| montain |
 	montain := MontainCase new.
 	self assert: montain goldGain equals: 8

@@ -8,7 +8,7 @@ Class {
 ArmyTest >> testGetPosition [
 	| army |
 	army := Army new.
-	self assert: army position className equals: #Cases.
+	self assert: army position className equals: #Case.
 ]
 
 { #category : #tests }
@@ -38,9 +38,9 @@ ArmyTest >> testSetArmySuperiorAt3OnMontain [
 ArmyTest >> testSetPosition [
 	| army case |
 	army := Army new.
-	case := Cases new.
+	case := Case new.
 	army position: case.
-	self assert: army position className equals: #Cases.
+	self assert: army position className equals: #Case.
 ]
 
 { #category : #tests }

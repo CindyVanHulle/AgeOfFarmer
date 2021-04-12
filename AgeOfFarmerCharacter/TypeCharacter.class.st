@@ -19,27 +19,27 @@ TypeCharacter class >> with: anPlayer [
 { #category : #initialization }
 TypeCharacter >> initialize [ 
 	super initialize.
-	position := Cases new.
+	position := Case new.
 ]
 
-{ #category : #creating }
+{ #category : #getter }
 TypeCharacter >> player [
 	^ player
 ]
 
-{ #category : #creating }
+{ #category : #setter }
 TypeCharacter >> player: aPlayer [
 	player := aPlayer. 
 ]
 
-{ #category : #accessing }
+{ #category : #getter }
 TypeCharacter >> position [
 	^ position
 ]
 
-{ #category : #accessing }
+{ #category : #setter }
 TypeCharacter >> position: aCase [
-	aCase className = #OceanCases ifTrue: [ Transcript show: 'your unit risk to drown';cr;cr ]
+	aCase className = #OceanCase ifTrue: [ Transcript show: 'your unit risk to drown';cr;cr ]
 	ifFalse: [ position characterEnabledOff.
 	aCase characterEnabledOn.
 	position := aCase. ]

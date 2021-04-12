@@ -1,15 +1,15 @@
 Class {
-	#name : #OceanCases,
-	#superclass : #Cases,
+	#name : #OceanCase,
+	#superclass : #Case,
 	#category : #AgeOfFarmerCase
 }
 
 { #category : #acccessing }
-OceanCases >> initialize [ 
+OceanCase >> initialize [ 
 	super initialize 
 ]
 
 { #category : #setter }
-OceanCases >> position: aCase [
+OceanCase >> position: aCase [
 	Transcript show: 'Your units risk to drown';cr.
 ]

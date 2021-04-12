@@ -1,32 +1,32 @@
 Class {
-	#name : #DesertCasesTest,
+	#name : #DesertCaseTest,
 	#superclass : #TestCase,
 	#category : #AgeOfFarmerCaseTest
 }
 
 { #category : #tests }
-DesertCasesTest >> testCostGold [
+DesertCaseTest >> testCostGold [
 	| desert |
 	desert := DesertCase new.
 	self assert: desert costGold equals: -3
 ]
 
 { #category : #tests }
-DesertCasesTest >> testGetArmySizeMax [
+DesertCaseTest >> testGetArmySizeMax [
 	| d |
 	d := DesertCase new.
 	self assert: (d armySizeMax  ) equals: 3.
 ]
 
 { #category : #tests }
-DesertCasesTest >> testGetPoints [
+DesertCaseTest >> testGetPoints [
 	| d |
 	d := DesertCase new.
 	self assert: (d points ) equals: 4.
 ]
 
 { #category : #tests }
-DesertCasesTest >> testHarvest [
+DesertCaseTest >> testHarvest [
 	| desert |
 	desert := DesertCase new.
 	self assert: desert goldGain equals: 5

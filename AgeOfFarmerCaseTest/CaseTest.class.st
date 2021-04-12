@@ -1,45 +1,45 @@
 Class {
-	#name : #CasesTest,
+	#name : #CaseTest,
 	#superclass : #TestCase,
 	#category : #AgeOfFarmerCaseTest
 }
 
 { #category : #tests }
-CasesTest >> testCharacterEnabledOff [
+CaseTest >> testCharacterEnabledOff [
 	| case |
-	case := Cases new.
+	case := Case new.
 	case characterEnabledOff.
 	self assert: case characterEnabled equals: false
 ]
 
 { #category : #tests }
-CasesTest >> testCharacterEnabledOn [
+CaseTest >> testCharacterEnabledOn [
 	| case |
-	case := Cases new.
+	case := Case new.
 	case characterEnabledOn.
 	self assert: case characterEnabled equals: true
 ]
 
 { #category : #tests }
-CasesTest >> testGetAndSetPlayer [
+CaseTest >> testGetAndSetPlayer [
 	| player case |
 	player := Player new.
-	case := Cases new.
+	case := Case new.
 	case player: player.
 	self assert: case player className equals: #Player.
 ]
 
 { #category : #tests }
-CasesTest >> testGetAndSetRessource [
+CaseTest >> testGetAndSetRessource [
 	| case ressource |
-	case := Cases new.
+	case := Case new.
 	ressource := Wood new.
 	case ressource: ressource.
 	self assert: case ressource equals: ressource.
 ]
 
 { #category : #tests }
-CasesTest >> testGetArmySizeMax [
+CaseTest >> testGetArmySizeMax [
 	| d m p w|
 	d := DesertCase new.
 	m := MontainCase new.
@@ -52,7 +52,7 @@ CasesTest >> testGetArmySizeMax [
 ]
 
 { #category : #tests }
-CasesTest >> testGetPoints [
+CaseTest >> testGetPoints [
 	| d m p w|
 	d := DesertCase new.
 	m := MontainCase new.
@@ -65,9 +65,9 @@ CasesTest >> testGetPoints [
 ]
 
 { #category : #tests }
-CasesTest >> testGetPosition [ 
+CaseTest >> testGetPosition [ 
 	| c |
-	c := Cases new.
+	c := Case new.
 	c position: 4@2.
 	self assert: c position equals: 4@2
 ]

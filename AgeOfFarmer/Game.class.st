@@ -7,7 +7,7 @@ Class {
 	#category : #AgeOfFarmer
 }
 
-{ #category : #initialization }
+{ #category : #adding }
 Game >> addPlayers: aPlayer [
 	players add: aPlayer 
 ]
@@ -30,12 +30,12 @@ Game >> playGame: aNumberOfPlayer [
 	Transcript show: 'Player ',self whoIsTheWinner asString,' win !!!!';cr.
 ]
 
-{ #category : #accessing }
+{ #category : #getter }
 Game >> players [
 	^ players
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #playing }
 Game >> whoIsTheWinner [
 	| scores |
 	scores := LinkedList new.

@@ -1,6 +1,6 @@
 Class {
 	#name : #ForestCase,
-	#superclass : #Cases,
+	#superclass : #Case,
 	#category : #AgeOfFarmerCase
 }
 
