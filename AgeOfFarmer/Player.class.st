@@ -1,19 +1,63 @@
+"
+The class `Player` represent a player in the AgeOfFarmer Game. A player is represented by a goldStock, a listOfUnits, a numberOfTerritory, numberOfWarrios, a unitsOfFoods, a score and a board.
+
+## Instance Variables
+
+- board:  Array2d
+- goldStock:  Integer
+- listOfUnits:  LinkedList of character
+- numberOfTerritory:  Integer
+- numberOfWarriors:  Integer
+- score:  Interger
+- unitsOfFoods:  Integer
+
+## Initializations
+The method in initialization allow to create a plyer to begin a game of AgeOfFarmer
+- `Player>>#initialize`
+
+## Getter
+You have a getter for all intances variables of Player.
+- `Player>>#goldStock`
+- `Player>>#unitsOfFoods`
+- `Player>>#numberOfWarriors`
+- `Player>>#numberOfTerritory`
+- `Player>>#listOfUnits`
+- `Player>>#score`
+- `Player>>#board`
+
+## Setter
+You can just set the player's board
+- `Player>>#board:`
+
+## Adding
+
+## Comparing
+
+## Moves
+
+## Playing
+
+## Display
+
+## Inout events
+
+
+
+
+Implementation Points
+
+"
 Class {
 	#name : #Player,
 	#superclass : #Object,
 	#instVars : [
 		'goldStock',
-		'woodStock',
-		'wheatStock',
-		'sandStock',
-		'stoneStock',
 		'numberOfWarriors',
 		'unitsOfFoods',
 		'numberOfTerritory',
 		'score',
 		'listOfUnits',
-		'board',
-		'cr'
+		'board'
 	],
 	#category : #AgeOfFarmer
 }
@@ -30,16 +74,12 @@ Player >> = anObject [
 
 	self == anObject ifTrue: [ ^ true ].
 	self class = anObject class ifFalse: [ ^ false ].
-	^ woodStock = anObject woodStock and: [ 
-		  wheatStock = anObject wheatStock and: [ 
-			  unitsOfFoods = anObject unitsOfFoods and: [ 
-				  stoneStock = anObject stoneStock and: [ 
-					  score = anObject score and: [ 
-						  sandStock = anObject sandStock and: [ 
-							  numberOfWarriors = anObject numberOfWarriors and: [ 
-								  numberOfTerritory = anObject numberOfTerritory and: [ 
-									  listOfUnits = anObject listOfUnits and: [ 
-										  goldStock = anObject goldStock ] ] ] ] ] ] ] ] ]
+	^ unitsOfFoods = anObject unitsOfFoods and: [ 
+		  score = anObject score and: [ 
+			  numberOfWarriors = anObject numberOfWarriors and: [ 
+				  numberOfTerritory = anObject numberOfTerritory and: [ 
+					  listOfUnits = anObject listOfUnits and: [ 
+						  board = anObject board and: [ goldStock = anObject goldStock ] ] ] ] ] ]
 ]
 
 { #category : #moves }
@@ -65,7 +105,7 @@ Player >> actionArmy [
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
 ]
 
-{ #category : #access }
+{ #category : #moves }
 Player >> actionFarmer [
 	| positionFarmer case | 
 	positionFarmer := self askSomethingToPlayer: 'position x,y'.
@@ -80,28 +120,8 @@ Player >> addGold: aQuantity [
 ]
 
 { #category : #adding }
-Player >> addSand: aQuantity [
-	sandStock := sandStock + aQuantity.
-]
-
-{ #category : #adding }
-Player >> addStone: aQuantity [ 
-	stoneStock := stoneStock + aQuantity.
-]
-
-{ #category : #adding }
 Player >> addUnitsOfFood: anInteger [
 	unitsOfFoods := unitsOfFoods + anInteger 
-]
-
-{ #category : #adding }
-Player >> addWheat: aQuantity [
-	wheatStock := wheatStock + aQuantity.
-]
-
-{ #category : #adding }
-Player >> addWood: aQuantity [ 
-	woodStock := woodStock + aQuantity.
 ]
 
 { #category : #moves }
@@ -116,7 +136,7 @@ Player >> armyAllies: aSize on: aCase [
 	
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #moves }
 Player >> armyEnemies: aSize against: aCase [
 	| enemies |
 	enemies := aCase character.
@@ -125,24 +145,24 @@ Player >> armyEnemies: aSize against: aCase [
 
 ]
 
-{ #category : #access }
+{ #category : #'input events' }
 Player >> askSomethingToPlayer: aStream [
 	| action |
 	action := UIManager default request: aStream .
 	^ action
 ]
 
-{ #category : #access }
+{ #category : #getter }
 Player >> board [
 	^ board
 ]
 
-{ #category : #creating }
+{ #category : #setter }
 Player >> board: aBoard [ 
 	board := aBoard
 ]
 
-{ #category : #access }
+{ #category : #display }
 Player >> displayARound [
 
 	board do: [ :each | 
@@ -152,7 +172,7 @@ Player >> displayARound [
 			cr ]
 ]
 
-{ #category : #access }
+{ #category : #moves }
 Player >> goldGain [
 	listOfUnits do: [ :each | self addGold: each position goldGain ].
 
@@ -160,12 +180,12 @@ Player >> goldGain [
 	
 ]
 
-{ #category : #access }
+{ #category : #getter }
 Player >> goldStock [
 	^ goldStock
 ]
 
-{ #category : #access }
+{ #category : #moves }
 Player >> harvest [
 	listOfUnits do: [ :each | each className = #Army  ifTrue: 
 		[self removeUnitsOfFood: each costFood]
@@ -179,23 +199,16 @@ Player >> hash [
 
 	"Answer an integer value that is related to the identity of the receiver."
 
-	^ woodStock hash bitXor:
-		  (wheatStock hash bitXor: (unitsOfFoods hash bitXor:
-				    (stoneStock hash bitXor:
-					     (score hash bitXor: (sandStock hash bitXor:
-							       (numberOfWarriors hash bitXor:
-								        (numberOfTerritory hash bitXor:
-									         (listOfUnits hash bitXor: goldStock hash))))))))
+	^ unitsOfFoods hash bitXor: (score hash bitXor:
+			   (numberOfWarriors hash bitXor: (numberOfTerritory hash bitXor:
+					     (listOfUnits hash bitXor:
+						      (board hash bitXor: goldStock hash)))))
 ]
 
 { #category : #initialization }
 Player >> initialize [
 
 	goldStock := 0.
-	woodStock := 0.
-	wheatStock := 0.
-	stoneStock := 0.
-	sandStock := 0.
 	numberOfWarriors := 35.
 	unitsOfFoods := 10.
 	numberOfTerritory := 0.
@@ -203,7 +216,7 @@ Player >> initialize [
 	listOfUnits := LinkedList new.
 ]
 
-{ #category : #access }
+{ #category : #getter }
 Player >> listOfUnits [
 	^ listOfUnits
 ]
@@ -213,12 +226,12 @@ Player >> move: aCharacter at: aCases [
 	aCharacter position: aCases.
 ]
 
-{ #category : #access }
+{ #category : #getter }
 Player >> numberOfTerritory [
 	^ numberOfTerritory
 ]
 
-{ #category : #access }
+{ #category : #getter }
 Player >> numberOfWarriors [
 	^ numberOfWarriors.
 ]
@@ -245,7 +258,7 @@ Player >> placeAnArmy: aCase with: aSize [
 	
 ]
 
-{ #category : #access }
+{ #category : #playing }
 Player >> playARound [
 	| action |
 	" Player need to play "
@@ -268,32 +281,17 @@ Player >> removeUnitsOfFood: anInteger [
 	unitsOfFoods := unitsOfFoods - anInteger 
 ]
 
-{ #category : #access }
-Player >> sandStock [
-	^ sandStock
-]
-
-{ #category : #access }
+{ #category : #getter }
 Player >> score [
 	^ score
 ]
 
-{ #category : #access }
-Player >> stoneStock [
-	^ stoneStock
-]
-
-{ #category : #access }
+{ #category : #getter }
 Player >> unitsOfFoods [
 	^ unitsOfFoods.
 ]
 
-{ #category : #access }
-Player >> wheatStock [
-	^ wheatStock
-]
-
-{ #category : #'as yet unclassified' }
+{ #category : #moves }
 Player >> whoIsOnTheCase: aCase with: aSize [
 	| character |
 	character := aCase character.
@@ -302,9 +300,4 @@ Player >> whoIsOnTheCase: aCase with: aSize [
 		ifTrue: [ self armyAllies: aSize on: aCase ]
 		ifFalse: [ self armyEnemies: aSize against: aCase ] ]
 	
-]
-
-{ #category : #access }
-Player >> woodStock [
-	^ woodStock
 ]
