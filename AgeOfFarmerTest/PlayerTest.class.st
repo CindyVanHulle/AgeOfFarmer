@@ -58,6 +58,17 @@ PlayerTest >> testGetAndSetBoard [
 ]
 
 { #category : #tests }
+PlayerTest >> testGetCostGold [
+	| player case list farmer|
+	player := Player new.
+	case := DesertCase new.
+	player placeAFarmer: case.
+	list := player listOfUnits.
+	farmer := list at: 1 .
+	self assert: farmer position costGold equals: -3.
+]
+
+{ #category : #tests }
 PlayerTest >> testGetGoldStock [
 	| player |
 	player := Player new.

@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #creation }
+ForestCase >> costGold [
+	^ -1.
+]
+
+{ #category : #creation }
 ForestCase >> goldGain [
 	^ 8
 ]
@@ -22,5 +27,5 @@ ForestCase >> initialize [
 
 { #category : #initialization }
 ForestCase >> printOn: aStream [
-	aStream nextPutAll: 'F'.
+	aStream nextPutAll: ' F '.
 ]

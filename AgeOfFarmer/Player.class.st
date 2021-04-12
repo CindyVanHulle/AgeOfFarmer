@@ -88,7 +88,10 @@ Player >> actionArmy [
 	positionArmy := self askSomethingToPlayer: 'position x,y,size'.
 	positionArmy := ',' split: positionArmy.
 	size := (positionArmy at: 3) asInteger.	
-		
+	
+	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
+	case characterEnabled ifTrue: [ Transcript show: 'la case est déjà occupé petit malin';cr ] ifFalse: [ 
+	
 	explore := ((board at: (((positionArmy at:1) asInteger - 1) max: 1)) at: (positionArmy at:2) asInteger).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "SUD" 
 	
@@ -101,17 +104,21 @@ Player >> actionArmy [
 	explore := ((board at: (positionArmy at:1) asInteger) at: (((positionArmy at:2) asInteger - 1)max: 1)).
 	explore characterEnabled ifTrue: [ self whoIsOnTheCase: explore with: size ]. "EST"
 	
-	case := (board at: (positionArmy at:1) asInteger) at: (positionArmy at:2) asInteger.
+	
 	self placeAnArmy: case with: (positionArmy at: 3) asInteger.
+	].
 ]
 
-{ #category : #moves }
+{ #category : #access }
 Player >> actionFarmer [
 	| positionFarmer case | 
 	positionFarmer := self askSomethingToPlayer: 'position x,y'.
 	positionFarmer := ',' split: positionFarmer.  
 	case := (board at: (positionFarmer at:1) asInteger) at: (positionFarmer at:2) asInteger.
+	case characterEnabled ifTrue: 
+	[ Transcript show: 'la case est deja occupée petit malin'; cr ] ifFalse: [ 
 	self placeAFarmer: case.
+	]
 ]
 
 { #category : #adding }
@@ -130,7 +137,7 @@ Player >> armyAllies: aSize on: aCase [
 	"size taille de l'armee que tu viens de placer"
 	| character |
 	character := (aCase character).
-	aSize < character & character size < 5 size ifTrue: 
+	(aSize < character size) & (character size < 5) ifTrue: 
 	[ character size + 1  ]
 	
 	
@@ -162,6 +169,17 @@ Player >> board: aBoard [
 	board := aBoard
 ]
 
+{ #category : #access }
+Player >> displayABoard [
+
+	board do: [ :each | 
+		each do: [ :case | Transcript show: case ].
+		Transcript
+			show: '';
+			cr ].
+	Transcript show: ' ';cr.
+]
+
 { #category : #display }
 Player >> displayARound [
 
@@ -172,9 +190,17 @@ Player >> displayARound [
 			cr ]
 ]
 
-{ #category : #moves }
+{ #category : #access }
+Player >> displayLine: aLine [
+
+	aLine do: [ :each | Transcript show: each ]
+]
+
+{ #category : #access }
 Player >> goldGain [
-	listOfUnits do: [ :each | self addGold: each position goldGain ].
+	listOfUnits do: [ :each | each className = #Army ifTrue: 
+		[ self addGold: each position goldGain ] 
+	ifFalse: [ goldStock <= 0 ifTrue: [ listOfUnits remove: each ] ifFalse: [ self addGold: each position costGold ]]].
 
 	
 	
@@ -185,10 +211,10 @@ Player >> goldStock [
 	^ goldStock
 ]
 
-{ #category : #moves }
+{ #category : #access }
 Player >> harvest [
 	listOfUnits do: [ :each | each className = #Army  ifTrue: 
-		[self removeUnitsOfFood: each costFood]
+		[unitsOfFoods <= 0 ifTrue: [ listOfUnits remove: each ] ifFalse: [ self removeUnitsOfFood: each costFood ] ]
 	ifFalse: [self addUnitsOfFood: each position harvest ]].
 	
 	
@@ -238,7 +264,13 @@ Player >> numberOfWarriors [
 
 { #category : #moves }
 Player >> placeAFarmer: aCase [
-	Farmer new position: aCase.
+	| farmer |
+	aCase className = #OceanCases ifTrue: [  ] ifFalse: [ farmer := Farmer new position: aCase.
+	listOfUnits add: farmer .
+	Transcript show: 'Your farmer placed';cr.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr. ]
+	
+	
 
 	
 	
@@ -247,33 +279,43 @@ Player >> placeAFarmer: aCase [
 { #category : #moves }
 Player >> placeAnArmy: aCase with: aSize [
 	| army |
-	army := (Army withArmySize: aSize).
+	aCase className = #OceanCases ifTrue: [ Transcript show: 'your unit risk to drown';cr;cr ] ifFalse: [ army := (Army withArmySize: aSize).
 	army player: self.
 	army position: aCase.
 	aCase character: army.
 	numberOfWarriors := numberOfWarriors - aSize.
+	numberOfTerritory := numberOfTerritory + 1.
 	listOfUnits add: army .
+	Transcript show: 'Your army placed ';cr.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr. ]
+	
 	
 	
 	
 ]
 
-{ #category : #playing }
+{ #category : #access }
 Player >> playARound [
 	| action |
-	" Player need to play "
-	self goldGain.
+	action := 'Army'.
 	self harvest.
+	self goldGain.	
 	Transcript show: 'la recolte c''est faite '; cr.
-	Transcript show: 'stock d''or : ' , goldStock asString,' le stock de nourriture : ', unitsOfFoods asString , ' tu as : ' , numberOfWarriors asString ,' guerriers ', ' tu as : ' , numberOfTerritory asString , ' territoires' ;cr.
-	self displayARound .
-	action := self askSomethingToPlayer: 'Army or Farmer or Nothing'.
+	Transcript show: 'gold : ' , goldStock asString,' | food : ', unitsOfFoods asString , ' | warrior : ' , numberOfWarriors asString , ' | territory : ' , numberOfTerritory asString ;cr.
+	self displayABoard .
+	[action = 'Army' or: action = 'Farmer' ] whileTrue: [ 
+	action:= self askSomethingToPlayer: 'Choose between Army,Farmer or Nothing'.
 	action = 'Army' ifTrue: [ self actionArmy].
-	action = 'Farmer' ifTrue: [ self actionFarmer ].
-	"Recolte ressource of all army"
-	"Nourrissage des armées"
+	action = 'Farmer' ifTrue: [ self actionFarmer ]. ]
+	
+
 	
 	
+]
+
+{ #category : #adding }
+Player >> removeGold: anInteger [
+	goldStock  := goldStock - anInteger 
 ]
 
 { #category : #adding }
@@ -291,12 +333,12 @@ Player >> unitsOfFoods [
 	^ unitsOfFoods.
 ]
 
-{ #category : #moves }
+{ #category : #'as yet unclassified' }
 Player >> whoIsOnTheCase: aCase with: aSize [
 	| character |
 	character := aCase character.
 	character className = #Farmer 
-	ifFalse: [ self = (character  player) 
+	ifFalse: [ self = (character player) 
 		ifTrue: [ self armyAllies: aSize on: aCase ]
 		ifFalse: [ self armyEnemies: aSize against: aCase ] ]
 	

@@ -16,6 +16,11 @@ MontainCase >> armySizeMax [
 ]
 
 { #category : #creation }
+MontainCase >> costGold [
+	^ -5.
+]
+
+{ #category : #creation }
 MontainCase >> goldGain [
 	^ 8.
 ]
@@ -34,5 +39,5 @@ MontainCase >> initialize [
 
 { #category : #initialization }
 MontainCase >> printOn: aStream [
-	aStream nextPutAll: 'M'.
+	aStream nextPutAll: ' M '.
 ]

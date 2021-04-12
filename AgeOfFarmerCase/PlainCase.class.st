@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #creation }
+PlainCase >> costGold [
+	^ -1.
+]
+
+{ #category : #creation }
 PlainCase >> goldGain [
 	^ 2.
 ]
@@ -22,5 +27,5 @@ PlainCase >> initialize [
 
 { #category : #initialization }
 PlainCase >> printOn: aStream [
-	aStream nextPutAll: 'P'.
+	aStream nextPutAll: ' P '.
 ]

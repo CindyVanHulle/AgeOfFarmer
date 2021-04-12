@@ -5,6 +5,13 @@ Class {
 }
 
 { #category : #tests }
+DesertCasesTest >> testCostGold [
+	| desert |
+	desert := DesertCase new.
+	self assert: desert costGold equals: -3
+]
+
+{ #category : #tests }
 DesertCasesTest >> testGetArmySizeMax [
 	| d |
 	d := DesertCase new.

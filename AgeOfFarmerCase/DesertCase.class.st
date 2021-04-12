@@ -11,6 +11,11 @@ DesertCase >> armySizeMax [
 ]
 
 { #category : #creation }
+DesertCase >> costGold [
+	^ -3.
+]
+
+{ #category : #creation }
 DesertCase >> goldGain [
 	^ 5.
 ]
@@ -29,5 +34,5 @@ DesertCase >> initialize [
 
 { #category : #initialization }
 DesertCase >> printOn: aStream [
-	aStream nextPutAll: 'D'.
+	aStream nextPutAll: ' D '.
 ]
